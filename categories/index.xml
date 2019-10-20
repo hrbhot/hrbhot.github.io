@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Mémo de Yin | 备忘录</title>
-    <link>hrbhot.github.io/categories/</link>
+    <link>https://hrbhot.github.io/categories/</link>
     <description>Recent content in Categories on Mémo de Yin | 备忘录</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>hrbhot@gmail.com (Yin)</managingEditor>
     <webMaster>hrbhot@gmail.com (Yin)</webMaster>
     
-	<atom:link href="hrbhot.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hrbhot.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
