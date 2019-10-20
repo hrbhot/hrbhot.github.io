@@ -3,8 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://hrbhot.github.io/posts/docker%E8%BF%81%E7%A7%BBmysql%E7%9A%84%E6%95%B0%E6%8D%AE%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2019-10-20T20:46:33+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://hrbhot.github.io/</loc>
-    <lastmod>2019-10-20T13:58:38+02:00</lastmod>
+    <lastmod>2019-10-20T20:46:33+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -19,7 +24,7 @@
   
   <url>
     <loc>https://hrbhot.github.io/posts/</loc>
-    <lastmod>2019-10-20T13:58:38+02:00</lastmod>
+    <lastmod>2019-10-20T20:46:33+02:00</lastmod>
   </url>
   
   <url>
