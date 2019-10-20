@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Mémo de Yin | 备忘录</title>
+    <link>hrbhot.github.io/posts/</link>
+    <description>Recent content in Posts on Mémo de Yin | 备忘录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>hrbhot@gmail.com (Yin)</managingEditor>
+    <webMaster>hrbhot@gmail.com (Yin)</webMaster>
+    <lastBuildDate>Sun, 20 Oct 2019 13:58:38 +0200</lastBuildDate>
+    
+	<atom:link href="hrbhot.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>备忘录的安装记录</title>
+      <link>hrbhot.github.io/posts/%E5%A4%87%E5%BF%98%E5%BD%95%E7%9A%84%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Sun, 20 Oct 2019 13:58:38 +0200</pubDate>
+      <author>hrbhot@gmail.com (Yin)</author>
+      <guid>hrbhot.github.io/posts/%E5%A4%87%E5%BF%98%E5%BD%95%E7%9A%84%E5%AE%89%E8%A3%85/</guid>
+      <description> 1. 安装go hugo git clone https://github.com/gohugoio/hugo.git cd hugo go install  2. 设置主题 git submodule add https://github.com/panr/hugo-theme-hello-friend.git themes/hello echo &#39;theme = &amp;quot;hello&amp;quot;&#39; &amp;gt;&amp;gt; config.toml  3. 发布文章 hugo new posts/my-first-post.md  4. 启动预览 hugo server hugo server -D # 草稿 draft 为true的文章  </description>
+    </item>
+    
+  </channel>
+</rss>
