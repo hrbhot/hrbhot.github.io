@@ -1,0 +1,15 @@
+---
+title: "Docker迁移mysql的数据问题"
+date: 2019-10-20T20:46:33+02:00
+---
+
+今天周日难得有空闲，把之前的joomla 1.5 迁移到本地环境测试升级到version 3.
+在迁移过程中 遇到了mysql 错误。
+```
+ [ERROR] --initialize specified but the data directory has files in it. Aborting.
+
+```
+解决的办法是，要把之前的mysql 数据先转移到一个临时文件夹，然后运行 Docker-compose up 生成镜像。再把mysql数据cp回来。
+
+用docker-compose迁移一个mysql php nginx的joomla网站到本地环境 15分钟内搞定。
+
