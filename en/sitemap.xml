@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://hrbhot.github.io/</loc>
+    <lastmod>2019-10-20T13:58:38+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://hrbhot.github.io/zh/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hrbhot.github.io/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://hrbhot.github.io/posts/</loc>
+    <lastmod>2019-10-20T13:58:38+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hrbhot.github.io/posts/%E5%A4%87%E5%BF%98%E5%BD%95%E7%9A%84%E5%AE%89%E8%A3%85/</loc>
+    <lastmod>2019-10-20T13:58:38+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hrbhot.github.io/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://hrbhot.github.io/zh/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hrbhot.github.io/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://hrbhot.github.io/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://hrbhot.github.io/zh/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hrbhot.github.io/tags/"
+                />
+  </url>
+  
+</urlset>
