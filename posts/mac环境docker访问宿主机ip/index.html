@@ -2,16 +2,15 @@
 <html lang="en">
   <head>
     
-      <title>Docker迁移mysql的数据问题 :: Mémo de Yin | 备忘录</title>
+      <title>Mac环境docker访问宿主机ip :: Mémo de Yin | 备忘录</title>
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="今天周日难得有空闲，把之前的joomla 1.5 迁移到本地环境测试升级到version 3. 在迁移过程中 遇到了mysql 错误。
- [ERROR] --initialize specified but the data directory has files in it. Aborting.  解决的办法是，要把之前的mysql 数据先转移到一个临时文件夹，然后运行 Docker-compose up 生成镜像。再把mysql数据cp回来。
-用docker-compose迁移一个mysql php nginx的joomla网站到本地环境 15分钟内搞定。"/>
+<meta name="description" content="mac测试环境下遇到一个问题，不能访问宿主机的端口。开始的时候错误的用127.0.0.1的地址访问，访问的是docker内容器的地址。 正确的方法是用
+ docker.for.mac.host.internal  这个地址来访问"/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
-<link rel="canonical" href="https://hrbhot.github.io/posts/docker%E8%BF%81%E7%A7%BBmysql%E7%9A%84%E6%95%B0%E6%8D%AE%E9%97%AE%E9%A2%98/" />
+<link rel="canonical" href="https://hrbhot.github.io/posts/mac%E7%8E%AF%E5%A2%83docker%E8%AE%BF%E9%97%AE%E5%AE%BF%E4%B8%BB%E6%9C%BAip/" />
 
 
 
@@ -28,21 +27,19 @@
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Docker迁移mysql的数据问题"/>
-<meta name="twitter:description" content="今天周日难得有空闲，把之前的joomla 1.5 迁移到本地环境测试升级到version 3. 在迁移过程中 遇到了mysql 错误。
- [ERROR] --initialize specified but the data directory has files in it. Aborting.  解决的办法是，要把之前的mysql 数据先转移到一个临时文件夹，然后运行 Docker-compose up 生成镜像。再把mysql数据cp回来。
-用docker-compose迁移一个mysql php nginx的joomla网站到本地环境 15分钟内搞定。"/>
+<meta name="twitter:title" content="Mac环境docker访问宿主机ip"/>
+<meta name="twitter:description" content="mac测试环境下遇到一个问题，不能访问宿主机的端口。开始的时候错误的用127.0.0.1的地址访问，访问的是docker内容器的地址。 正确的方法是用
+ docker.for.mac.host.internal  这个地址来访问"/>
 
 
 
-<meta property="og:title" content="Docker迁移mysql的数据问题" />
-<meta property="og:description" content="今天周日难得有空闲，把之前的joomla 1.5 迁移到本地环境测试升级到version 3. 在迁移过程中 遇到了mysql 错误。
- [ERROR] --initialize specified but the data directory has files in it. Aborting.  解决的办法是，要把之前的mysql 数据先转移到一个临时文件夹，然后运行 Docker-compose up 生成镜像。再把mysql数据cp回来。
-用docker-compose迁移一个mysql php nginx的joomla网站到本地环境 15分钟内搞定。" />
+<meta property="og:title" content="Mac环境docker访问宿主机ip" />
+<meta property="og:description" content="mac测试环境下遇到一个问题，不能访问宿主机的端口。开始的时候错误的用127.0.0.1的地址访问，访问的是docker内容器的地址。 正确的方法是用
+ docker.for.mac.host.internal  这个地址来访问" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://hrbhot.github.io/posts/docker%E8%BF%81%E7%A7%BBmysql%E7%9A%84%E6%95%B0%E6%8D%AE%E9%97%AE%E9%A2%98/" />
-<meta property="article:published_time" content="2019-10-20T20:46:33+02:00" />
-<meta property="article:modified_time" content="2019-10-20T20:46:33+02:00" />
+<meta property="og:url" content="https://hrbhot.github.io/posts/mac%E7%8E%AF%E5%A2%83docker%E8%AE%BF%E9%97%AE%E5%AE%BF%E4%B8%BB%E6%9C%BAip/" />
+<meta property="article:published_time" content="2019-10-20T22:32:04+02:00" />
+<meta property="article:modified_time" content="2019-10-20T22:32:04+02:00" />
 
 
 
@@ -83,7 +80,7 @@
       <div class="content">
         
   <div class="post">
-    <h2 class="post-title"><a href="https://hrbhot.github.io/posts/docker%E8%BF%81%E7%A7%BBmysql%E7%9A%84%E6%95%B0%E6%8D%AE%E9%97%AE%E9%A2%98/">Docker迁移mysql的数据问题</a></h2>
+    <h2 class="post-title"><a href="https://hrbhot.github.io/posts/mac%E7%8E%AF%E5%A2%83docker%E8%AE%BF%E9%97%AE%E5%AE%BF%E4%B8%BB%E6%9C%BAip/">Mac环境docker访问宿主机ip</a></h2>
     <div class="post-meta">
       
         <span class="post-date">
@@ -99,16 +96,13 @@
     
 
     <div class="post-content">
-      <p>今天周日难得有空闲，把之前的joomla 1.5 迁移到本地环境测试升级到version 3.
-在迁移过程中 遇到了mysql 错误。</p>
+      <p>mac测试环境下遇到一个问题，不能访问宿主机的端口。开始的时候错误的用127.0.0.1的地址访问，访问的是docker内容器的地址。
+正确的方法是用</p>
 
-<pre><code> [ERROR] --initialize specified but the data directory has files in it. Aborting.
-
+<pre><code> docker.for.mac.host.internal 
 </code></pre>
 
-<p>解决的办法是，要把之前的mysql 数据先转移到一个临时文件夹，然后运行 Docker-compose up 生成镜像。再把mysql数据cp回来。</p>
-
-<p>用docker-compose迁移一个mysql php nginx的joomla网站到本地环境 15分钟内搞定。</p>
+<p>这个地址来访问</p>
 
     </div>
     
@@ -120,16 +114,16 @@
         <div class="pagination__buttons">
           
             <span class="button previous">
-              <a href="https://hrbhot.github.io/posts/mac%E7%8E%AF%E5%A2%83docker%E8%AE%BF%E9%97%AE%E5%AE%BF%E4%B8%BB%E6%9C%BAip/">
+              <a href="https://hrbhot.github.io/posts/%E5%9C%A8phpmyadmin%E4%B8%AD%E7%94%A8sql%E8%AF%AD%E5%8F%A5%E4%BF%AE%E6%94%B9root%E5%AF%86%E7%A0%81/">
                 <span class="button__icon">←</span>
-                <span class="button__text">Mac环境docker访问宿主机ip</span>
+                <span class="button__text">在phpmyadmin中用sql语句修改root密码</span>
               </a>
             </span>
           
           
             <span class="button next">
-              <a href="https://hrbhot.github.io/posts/%E5%A4%87%E5%BF%98%E5%BD%95%E7%9A%84%E5%AE%89%E8%A3%85/">
-                <span class="button__text">备忘录的安装记录</span>
+              <a href="https://hrbhot.github.io/posts/docker%E8%BF%81%E7%A7%BBmysql%E7%9A%84%E6%95%B0%E6%8D%AE%E9%97%AE%E9%A2%98/">
+                <span class="button__text">Docker迁移mysql的数据问题</span>
                 <span class="button__icon">→</span>
               </a>
             </span>
