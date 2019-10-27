@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>使用ddns把动态ip绑定到域名 :: Mémo de Yin | 备忘录</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="公司的box是orange business，竟然不是固定ip。最近折腾内网的nas因为这个事情折腾了2天。 方案是用 ddns https://github.com/NewFuture/DDNS
+ 申请腾讯的DNSPOD，把域名添加到里面，然后到现有到域名商那里自定义dns添加f1g1ns1.dnspod.net， f1g1ns2.dnspod.net 。
+ 在DNSPOD密钥管理里面，添加API ，记住ID和TOKEN字段。
+ 用pip 安装 ddns
+pip install ddns  编辑config.json文件 id -&amp;gt; DNSPOD API id, ipv4 -&amp;gt; 修改为自己的域名 index4 -&amp;gt; &amp;ldquo;public&amp;rdquo; ipv6 -&amp;gt; 清空变成 [] tokend -&amp;gt; DNSPOD API token
+ 执行ddns 命令,提示域名已经指向了当前的动态ip地址。这是在DNSPOD的控制台也可以看到这时候IP已经变成了box的动态ip。
+ 定时任务，需要把github clone到本地,给task.sh和run.py加权限运行。
+运行 cat /etc/cron.d/ddns  任务已经添加到了cron
+  "/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://hrbhot.github.io/posts/%E4%BD%BF%E7%94%A8ddns%E7%BB%91%E5%AE%9A%E5%8A%A8%E6%80%81ip%E5%88%B0%E5%9F%9F%E5%90%8D/" />
+
+
+
+
+
+<link rel="stylesheet" href="https://hrbhot.github.io/assets/style.css">
+
+
+<link rel="stylesheet" href="https://hrbhot.github.io/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://hrbhot.github.io/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="https://hrbhot.github.io/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用ddns把动态ip绑定到域名"/>
+<meta name="twitter:description" content="公司的box是orange business，竟然不是固定ip。最近折腾内网的nas因为这个事情折腾了2天。 方案是用 ddns https://github.com/NewFuture/DDNS
+ 申请腾讯的DNSPOD，把域名添加到里面，然后到现有到域名商那里自定义dns添加f1g1ns1.dnspod.net， f1g1ns2.dnspod.net 。
+ 在DNSPOD密钥管理里面，添加API ，记住ID和TOKEN字段。
+ 用pip 安装 ddns
+pip install ddns  编辑config.json文件 id -&gt; DNSPOD API id, ipv4 -&gt; 修改为自己的域名 index4 -&gt; &ldquo;public&rdquo; ipv6 -&gt; 清空变成 [] tokend -&gt; DNSPOD API token
+ 执行ddns 命令,提示域名已经指向了当前的动态ip地址。这是在DNSPOD的控制台也可以看到这时候IP已经变成了box的动态ip。
+ 定时任务，需要把github clone到本地,给task.sh和run.py加权限运行。
+运行 cat /etc/cron.d/ddns  任务已经添加到了cron
+  "/>
+
+
+
+<meta property="og:title" content="使用ddns把动态ip绑定到域名" />
+<meta property="og:description" content="公司的box是orange business，竟然不是固定ip。最近折腾内网的nas因为这个事情折腾了2天。 方案是用 ddns https://github.com/NewFuture/DDNS
+ 申请腾讯的DNSPOD，把域名添加到里面，然后到现有到域名商那里自定义dns添加f1g1ns1.dnspod.net， f1g1ns2.dnspod.net 。
+ 在DNSPOD密钥管理里面，添加API ，记住ID和TOKEN字段。
+ 用pip 安装 ddns
+pip install ddns  编辑config.json文件 id -&gt; DNSPOD API id, ipv4 -&gt; 修改为自己的域名 index4 -&gt; &ldquo;public&rdquo; ipv6 -&gt; 清空变成 [] tokend -&gt; DNSPOD API token
+ 执行ddns 命令,提示域名已经指向了当前的动态ip地址。这是在DNSPOD的控制台也可以看到这时候IP已经变成了box的动态ip。
+ 定时任务，需要把github clone到本地,给task.sh和run.py加权限运行。
+运行 cat /etc/cron.d/ddns  任务已经添加到了cron
+  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hrbhot.github.io/posts/%E4%BD%BF%E7%94%A8ddns%E7%BB%91%E5%AE%9A%E5%8A%A8%E6%80%81ip%E5%88%B0%E5%9F%9F%E5%90%8D/" />
+<meta property="article:published_time" content="2019-10-27T17:34:25+01:00" />
+<meta property="article:modified_time" content="2019-10-27T17:34:25+01:00" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">Mémo de Yin | 备忘录</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="post">
+    <h2 class="post-title"><a href="https://hrbhot.github.io/posts/%E4%BD%BF%E7%94%A8ddns%E7%BB%91%E5%AE%9A%E5%8A%A8%E6%80%81ip%E5%88%B0%E5%9F%9F%E5%90%8D/">使用ddns把动态ip绑定到域名</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            2019-10-27
+        </span>
+      
+      
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      <p>公司的box是orange business，竟然不是固定ip。最近折腾内网的nas因为这个事情折腾了2天。
+方案是用 ddns <a href="https://github.com/NewFuture/DDNS">https://github.com/NewFuture/DDNS</a></p>
+
+<ol>
+<li><p>申请腾讯的DNSPOD，把域名添加到里面，然后到现有到域名商那里自定义dns添加f1g1ns1.dnspod.net， f1g1ns2.dnspod.net 。</p></li>
+
+<li><p>在DNSPOD密钥管理里面，添加API ，记住ID和TOKEN字段。</p></li>
+
+<li><p>用pip 安装 ddns</p>
+
+<pre><code>pip install ddns
+</code></pre></li>
+
+<li><p>编辑config.json文件
+id -&gt; DNSPOD API id,
+ipv4 -&gt; 修改为自己的域名
+index4 -&gt; &ldquo;public&rdquo;
+ipv6 -&gt; 清空变成 []
+tokend -&gt; DNSPOD API token</p></li>
+
+<li><p>执行ddns 命令,提示域名已经指向了当前的动态ip地址。这是在DNSPOD的控制台也可以看到这时候IP已经变成了box的动态ip。</p></li>
+
+<li><p>定时任务，需要把github clone到本地,给task.sh和run.py加权限运行。</p>
+
+<pre><code>运行 cat  /etc/cron.d/ddns
+</code></pre>
+
+<p>任务已经添加到了cron</p></li>
+</ol>
+
+    </div>
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h">Read other posts</span>
+          <hr />
+        </div>
+        <div class="pagination__buttons">
+          
+          
+            <span class="button next">
+              <a href="https://hrbhot.github.io/posts/centos/">
+                <span class="button__text">Centos安装docker的错误解决</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">Mémo de Yin | 备忘录</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="https://hrbhot.github.io/assets/main.js"></script>
+<script src="https://hrbhot.github.io/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

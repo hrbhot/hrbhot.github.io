@@ -8,10 +8,27 @@
     <language>zh-cn</language>
     <managingEditor>hrbhot@gmail.com (Yin)</managingEditor>
     <webMaster>hrbhot@gmail.com (Yin)</webMaster>
-    <lastBuildDate>Tue, 22 Oct 2019 23:44:51 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 27 Oct 2019 17:34:25 +0100</lastBuildDate>
     
 	<atom:link href="https://hrbhot.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>使用ddns把动态ip绑定到域名</title>
+      <link>https://hrbhot.github.io/posts/%E4%BD%BF%E7%94%A8ddns%E7%BB%91%E5%AE%9A%E5%8A%A8%E6%80%81ip%E5%88%B0%E5%9F%9F%E5%90%8D/</link>
+      <pubDate>Sun, 27 Oct 2019 17:34:25 +0100</pubDate>
+      <author>hrbhot@gmail.com (Yin)</author>
+      <guid>https://hrbhot.github.io/posts/%E4%BD%BF%E7%94%A8ddns%E7%BB%91%E5%AE%9A%E5%8A%A8%E6%80%81ip%E5%88%B0%E5%9F%9F%E5%90%8D/</guid>
+      <description>公司的box是orange business，竟然不是固定ip。最近折腾内网的nas因为这个事情折腾了2天。 方案是用 ddns https://github.com/NewFuture/DDNS
+ 申请腾讯的DNSPOD，把域名添加到里面，然后到现有到域名商那里自定义dns添加f1g1ns1.dnspod.net， f1g1ns2.dnspod.net 。
+ 在DNSPOD密钥管理里面，添加API ，记住ID和TOKEN字段。
+ 用pip 安装 ddns
+pip install ddns  编辑config.json文件 id -&amp;gt; DNSPOD API id, ipv4 -&amp;gt; 修改为自己的域名 index4 -&amp;gt; &amp;ldquo;public&amp;rdquo; ipv6 -&amp;gt; 清空变成 [] tokend -&amp;gt; DNSPOD API token
+ 执行ddns 命令,提示域名已经指向了当前的动态ip地址。这是在DNSPOD的控制台也可以看到这时候IP已经变成了box的动态ip。
+ 定时任务，需要把github clone到本地,给task.sh和run.py加权限运行。
+运行 cat /etc/cron.d/ddns  任务已经添加到了cron
+  </description>
+    </item>
     
     <item>
       <title>Centos安装docker的错误解决</title>
