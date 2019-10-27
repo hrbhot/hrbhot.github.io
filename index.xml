@@ -8,10 +8,19 @@
     <language>zh-cn</language>
     <managingEditor>hrbhot@gmail.com (Yin)</managingEditor>
     <webMaster>hrbhot@gmail.com (Yin)</webMaster>
-    <lastBuildDate>Sun, 27 Oct 2019 19:38:11 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 27 Oct 2019 20:10:36 +0100</lastBuildDate>
     
 	<atom:link href="https://hrbhot.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mac下grep 使用查找某文件包含的内容</title>
+      <link>https://hrbhot.github.io/posts/mac%E6%9F%A5%E6%89%BE%E6%96%87%E4%BB%B6%E5%86%85%E5%8C%85%E5%90%AB%E7%9A%84%E6%96%87%E5%AD%97/</link>
+      <pubDate>Sun, 27 Oct 2019 20:10:36 +0100</pubDate>
+      <author>hrbhot@gmail.com (Yin)</author>
+      <guid>https://hrbhot.github.io/posts/mac%E6%9F%A5%E6%89%BE%E6%96%87%E4%BB%B6%E5%86%85%E5%8C%85%E5%90%AB%E7%9A%84%E6%96%87%E5%AD%97/</guid>
+      <description>grep -n &amp;ldquo;文件内容&amp;rdquo; -r ./</description>
+    </item>
     
     <item>
       <title>Nextcloud</title>
