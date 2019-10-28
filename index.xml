@@ -52,7 +52,9 @@ git clone https://github.com/wahyd4/aria2-ariang-x-docker-compose.git  进入nex
 cd aria2-ariang-x-docker-compose/nextcloud  拉docker镜像以及检测是否有错误。
 docker-compose up  修改 data目录权限，否则会报502错误，或者 “Your data directory is readable by other users ”
 chown -R www-data data chmod -R 0770 daTA  运行nextcloud ,并到前端注册用户名密码。完成。
-docker-compose up -d   </description>
+docker-compose up -d  补充 修改 nextcloud/config/config.php 文件，添加
+&#39;check_data_directory_permissions&#39; =&amp;gt; false,  否则不是出现502错误，就是500错误。
+  </description>
     </item>
     
     <item>

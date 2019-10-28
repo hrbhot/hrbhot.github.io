@@ -12,7 +12,9 @@ git clone https://github.com/wahyd4/aria2-ariang-x-docker-compose.git  进入nex
 cd aria2-ariang-x-docker-compose/nextcloud  拉docker镜像以及检测是否有错误。
 docker-compose up  修改 data目录权限，否则会报502错误，或者 “Your data directory is readable by other users ”
 chown -R www-data data chmod -R 0770 daTA  运行nextcloud ,并到前端注册用户名密码。完成。
-docker-compose up -d   "/>
+docker-compose up -d  补充 修改 nextcloud/config/config.php 文件，添加
+&#39;check_data_directory_permissions&#39; =&amp;gt; false,  否则不是出现502错误，就是500错误。
+  "/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="https://hrbhot.github.io/posts/nextcloud/" />
@@ -39,7 +41,9 @@ git clone https://github.com/wahyd4/aria2-ariang-x-docker-compose.git  进入nex
 cd aria2-ariang-x-docker-compose/nextcloud  拉docker镜像以及检测是否有错误。
 docker-compose up  修改 data目录权限，否则会报502错误，或者 “Your data directory is readable by other users ”
 chown -R www-data data chmod -R 0770 daTA  运行nextcloud ,并到前端注册用户名密码。完成。
-docker-compose up -d   "/>
+docker-compose up -d  补充 修改 nextcloud/config/config.php 文件，添加
+&#39;check_data_directory_permissions&#39; =&gt; false,  否则不是出现502错误，就是500错误。
+  "/>
 
 
 
@@ -50,7 +54,9 @@ git clone https://github.com/wahyd4/aria2-ariang-x-docker-compose.git  进入nex
 cd aria2-ariang-x-docker-compose/nextcloud  拉docker镜像以及检测是否有错误。
 docker-compose up  修改 data目录权限，否则会报502错误，或者 “Your data directory is readable by other users ”
 chown -R www-data data chmod -R 0770 daTA  运行nextcloud ,并到前端注册用户名密码。完成。
-docker-compose up -d   " />
+docker-compose up -d  补充 修改 nextcloud/config/config.php 文件，添加
+&#39;check_data_directory_permissions&#39; =&gt; false,  否则不是出现502错误，就是500错误。
+  " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://hrbhot.github.io/posts/nextcloud/" />
 <meta property="article:published_time" content="2019-10-27T19:38:11+01:00" />
@@ -138,7 +144,15 @@ chmod -R 0770 daTA
 <li><p>运行nextcloud ,并到前端注册用户名密码。完成。</p>
 
 <pre><code>docker-compose up -d
-</code></pre></li>
+</code></pre>
+
+<p>补充
+修改 nextcloud/config/config.php 文件，添加</p>
+
+<pre><code>'check_data_directory_permissions' =&gt; false,
+</code></pre>
+
+<p>否则不是出现502错误，就是500错误。</p></li>
 </ol>
 
     </div>
