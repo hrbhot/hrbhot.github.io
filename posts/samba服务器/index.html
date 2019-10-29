@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>Samba服务器 :: Mémo de Yin | 备忘录</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="ubuntu 安装 samba服务器
+sudo apt-get install samba samba-common  创建目录
+mkdir /data/samba chmod 777 /data/samba -R  设置用户名密码(yin是我的用户名)
+smbpasswd -a yin  修改 samba配置文件
+vim /etc/samba/smb.conf  在文件最后部分添加
+[share] comment = share folder browseable = yes path = /data/raid/nextcloud/data/samba #docker目录下的路径 create mask = 0700 directory mask = 0700 valid users = yin #用户名 force user = yin force group = yin public = yes available = yes writable = yes  重启samba服务器"/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://hrbhot.github.io/posts/samba%E6%9C%8D%E5%8A%A1%E5%99%A8/" />
+
+
+
+
+
+<link rel="stylesheet" href="https://hrbhot.github.io/assets/style.css">
+
+
+<link rel="stylesheet" href="https://hrbhot.github.io/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://hrbhot.github.io/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="https://hrbhot.github.io/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Samba服务器"/>
+<meta name="twitter:description" content="ubuntu 安装 samba服务器
+sudo apt-get install samba samba-common  创建目录
+mkdir /data/samba chmod 777 /data/samba -R  设置用户名密码(yin是我的用户名)
+smbpasswd -a yin  修改 samba配置文件
+vim /etc/samba/smb.conf  在文件最后部分添加
+[share] comment = share folder browseable = yes path = /data/raid/nextcloud/data/samba #docker目录下的路径 create mask = 0700 directory mask = 0700 valid users = yin #用户名 force user = yin force group = yin public = yes available = yes writable = yes  重启samba服务器"/>
+
+
+
+<meta property="og:title" content="Samba服务器" />
+<meta property="og:description" content="ubuntu 安装 samba服务器
+sudo apt-get install samba samba-common  创建目录
+mkdir /data/samba chmod 777 /data/samba -R  设置用户名密码(yin是我的用户名)
+smbpasswd -a yin  修改 samba配置文件
+vim /etc/samba/smb.conf  在文件最后部分添加
+[share] comment = share folder browseable = yes path = /data/raid/nextcloud/data/samba #docker目录下的路径 create mask = 0700 directory mask = 0700 valid users = yin #用户名 force user = yin force group = yin public = yes available = yes writable = yes  重启samba服务器" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hrbhot.github.io/posts/samba%E6%9C%8D%E5%8A%A1%E5%99%A8/" />
+<meta property="article:published_time" content="2019-10-30T00:23:18+01:00" />
+<meta property="article:modified_time" content="2019-10-30T00:23:18+01:00" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 50 50">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">Mémo de Yin | 备忘录</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="post">
+    <h2 class="post-title"><a href="https://hrbhot.github.io/posts/samba%E6%9C%8D%E5%8A%A1%E5%99%A8/">Samba服务器</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            2019-10-30
+        </span>
+      
+      
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      <p>ubuntu 安装 samba服务器</p>
+
+<pre><code>sudo apt-get install samba samba-common
+</code></pre>
+
+<p>创建目录</p>
+
+<pre><code>mkdir /data/samba
+chmod 777 /data/samba -R
+</code></pre>
+
+<p>设置用户名密码(yin是我的用户名)</p>
+
+<pre><code>smbpasswd -a yin
+</code></pre>
+
+<p>修改 samba配置文件</p>
+
+<pre><code>vim /etc/samba/smb.conf
+</code></pre>
+
+<p>在文件最后部分添加</p>
+
+<pre><code>[share]
+comment = share folder
+browseable = yes
+path = /data/raid/nextcloud/data/samba   #docker目录下的路径
+create mask = 0700
+directory mask = 0700
+valid users = yin   #用户名
+force user = yin
+force group = yin
+public = yes
+available = yes
+writable = yes
+</code></pre>
+
+<p>重启samba服务器</p>
+
+<pre><code>service smbd restart
+</code></pre>
+
+    </div>
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h">Read other posts</span>
+          <hr />
+        </div>
+        <div class="pagination__buttons">
+          
+          
+            <span class="button next">
+              <a href="https://hrbhot.github.io/posts/nextcloud%E6%B7%BB%E5%8A%A0smb%E6%89%A9%E5%B1%95/">
+                <span class="button__text">Nextcloud添加smb扩展</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 50 50">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">Mémo de Yin | 备忘录</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="https://hrbhot.github.io/assets/main.js"></script>
+<script src="https://hrbhot.github.io/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

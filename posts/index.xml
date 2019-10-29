@@ -8,10 +8,24 @@
     <language>zh-cn</language>
     <managingEditor>hrbhot@gmail.com (Yin)</managingEditor>
     <webMaster>hrbhot@gmail.com (Yin)</webMaster>
-    <lastBuildDate>Tue, 29 Oct 2019 23:37:39 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 30 Oct 2019 00:23:18 +0100</lastBuildDate>
     
 	<atom:link href="https://hrbhot.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Samba服务器</title>
+      <link>https://hrbhot.github.io/posts/samba%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Wed, 30 Oct 2019 00:23:18 +0100</pubDate>
+      <author>hrbhot@gmail.com (Yin)</author>
+      <guid>https://hrbhot.github.io/posts/samba%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description>ubuntu 安装 samba服务器
+sudo apt-get install samba samba-common  创建目录
+mkdir /data/samba chmod 777 /data/samba -R  设置用户名密码(yin是我的用户名)
+smbpasswd -a yin  修改 samba配置文件
+vim /etc/samba/smb.conf  在文件最后部分添加
+[share] comment = share folder browseable = yes path = /data/raid/nextcloud/data/samba #docker目录下的路径 create mask = 0700 directory mask = 0700 valid users = yin #用户名 force user = yin force group = yin public = yes available = yes writable = yes  重启samba服务器</description>
+    </item>
     
     <item>
       <title>Nextcloud添加smb扩展</title>
