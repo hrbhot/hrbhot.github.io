@@ -8,10 +8,20 @@
     <language>zh-cn</language>
     <managingEditor>hrbhot@gmail.com (Yin)</managingEditor>
     <webMaster>hrbhot@gmail.com (Yin)</webMaster>
-    <lastBuildDate>Wed, 30 Oct 2019 00:23:18 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 06 Nov 2019 23:30:51 +0100</lastBuildDate>
     
 	<atom:link href="https://hrbhot.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Docker环境下nextcloud配置smb服务</title>
+      <link>https://hrbhot.github.io/posts/docker%E7%8E%AF%E5%A2%83%E4%B8%8Bnextcloud%E9%85%8D%E7%BD%AEsmb%E6%9C%8D%E5%8A%A1/</link>
+      <pubDate>Wed, 06 Nov 2019 23:30:51 +0100</pubDate>
+      <author>hrbhot@gmail.com (Yin)</author>
+      <guid>https://hrbhot.github.io/posts/docker%E7%8E%AF%E5%A2%83%E4%B8%8Bnextcloud%E9%85%8D%E7%BD%AEsmb%E6%9C%8D%E5%8A%A1/</guid>
+      <description>在nextcloud docker环境下增加外部存储 smb的方法 外部存储-&amp;gt; 添加本地 路径 /data/smb -&amp;gt; /etc/samba/smb.conf 定位配置路径 docker持久目录下的data/smm b目录。  原理是把smb的目录位置，设置成nextcloud内部的本地路径，因为nextcloud的smb配置规则不清晰，调试麻烦 。
+~</description>
+    </item>
     
     <item>
       <title>Samba服务器</title>
