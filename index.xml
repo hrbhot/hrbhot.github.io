@@ -8,10 +8,29 @@
     <language>zh-cn</language>
     <managingEditor>hrbhot@gmail.com (Yin)</managingEditor>
     <webMaster>hrbhot@gmail.com (Yin)</webMaster>
-    <lastBuildDate>Wed, 06 Nov 2019 23:33:55 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jan 2020 20:22:31 +0100</lastBuildDate>
     
 	<atom:link href="https://hrbhot.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Odoo安装简述</title>
+      <link>https://hrbhot.github.io/posts/odoo%E5%AE%89%E8%A3%85%E7%AE%80%E8%BF%B0/</link>
+      <pubDate>Sun, 12 Jan 2020 20:22:31 +0100</pubDate>
+      <author>hrbhot@gmail.com (Yin)</author>
+      <guid>https://hrbhot.github.io/posts/odoo%E5%AE%89%E8%A3%85%E7%AE%80%E8%BF%B0/</guid>
+      <description>odoo 安装 安装 postgresql 12 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - echo &amp;quot;deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main&amp;quot; |sudo tee /etc/apt/sources.list.d/pgdg.list sudo apt -y install postgresql-12 postgresql-client-12  创建 postgresql odoo用户和密码 sudo adduser --system --home=/opt/odoo --group odoo  测试 postgresql sudo su - postgres psql  配置 postgresql 允许外部访问 vim /etc/postgresql/12/main/postgresql.conf # Listen on all interfaces listen_addresses = &#39;*&#39; ### python3环境准备  sudo apt install python3-dev python3-pip -y sudo apt install build-essential libxslt-dev libzip-dev libldap2-dev libsasl2-dev libssl-dev -y</description>
+    </item>
+    
+    <item>
+      <title>Mac Font Chrome</title>
+      <link>https://hrbhot.github.io/posts/mac-font-chrome/</link>
+      <pubDate>Sun, 12 Jan 2020 19:19:07 +0100</pubDate>
+      <author>hrbhot@gmail.com (Yin)</author>
+      <guid>https://hrbhot.github.io/posts/mac-font-chrome/</guid>
+      <description> mac下chrome 字体发虚 运行
+defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO  </description>
+    </item>
     
     <item>
       <title>Linux前台进程切换到后台</title>
