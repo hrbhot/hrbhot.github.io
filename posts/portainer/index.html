@@ -2,18 +2,16 @@
 <html lang="en">
   <head>
     
-      <title>Mac命令行中用sublime打开文件 :: Mémo de Yin | 备忘录</title>
+      <title>Portainer 的安装 :: Mémo de Yin | 备忘录</title>
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content=" mac命令行中用sublime打开文件 使用zsh环境 编辑 bash_profile文件
-vim ~/.bash_profile  在尾部添加内容
-alias subl=&amp;quot;&#39;/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl&#39;&amp;quot; alias nano=&amp;quot;subl&amp;quot; export EDITOR=&amp;quot;subl&amp;quot;  重新加载 source
-source ~/.bash_profile  运行 测试
-subl  "/>
+<meta name="description" content=" linux 安装 Portainer 是一个docker web端的控制面板,目测非常简单方便。
+创建 volume docker volume create portainer_data  启动运行 portainer 通过 9000端口访问 ，初始需要设置用户名密码。
+docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer  "/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
-<link rel="canonical" href="https://hrbhot.github.io/posts/mac%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%AD%E7%94%A8sublime%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6/" />
+<link rel="canonical" href="https://hrbhot.github.io/posts/portainer/" />
 
 
 
@@ -30,25 +28,21 @@ subl  "/>
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Mac命令行中用sublime打开文件"/>
-<meta name="twitter:description" content=" mac命令行中用sublime打开文件 使用zsh环境 编辑 bash_profile文件
-vim ~/.bash_profile  在尾部添加内容
-alias subl=&quot;&#39;/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl&#39;&quot; alias nano=&quot;subl&quot; export EDITOR=&quot;subl&quot;  重新加载 source
-source ~/.bash_profile  运行 测试
-subl  "/>
+<meta name="twitter:title" content="Portainer 的安装"/>
+<meta name="twitter:description" content=" linux 安装 Portainer 是一个docker web端的控制面板,目测非常简单方便。
+创建 volume docker volume create portainer_data  启动运行 portainer 通过 9000端口访问 ，初始需要设置用户名密码。
+docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer  "/>
 
 
 
-<meta property="og:title" content="Mac命令行中用sublime打开文件" />
-<meta property="og:description" content=" mac命令行中用sublime打开文件 使用zsh环境 编辑 bash_profile文件
-vim ~/.bash_profile  在尾部添加内容
-alias subl=&quot;&#39;/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl&#39;&quot; alias nano=&quot;subl&quot; export EDITOR=&quot;subl&quot;  重新加载 source
-source ~/.bash_profile  运行 测试
-subl  " />
+<meta property="og:title" content="Portainer 的安装" />
+<meta property="og:description" content=" linux 安装 Portainer 是一个docker web端的控制面板,目测非常简单方便。
+创建 volume docker volume create portainer_data  启动运行 portainer 通过 9000端口访问 ，初始需要设置用户名密码。
+docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://hrbhot.github.io/posts/mac%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%AD%E7%94%A8sublime%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6/" />
-<meta property="article:published_time" content="2020-03-29T10:27:04+02:00" />
-<meta property="article:modified_time" content="2020-03-29T10:27:04+02:00" />
+<meta property="og:url" content="https://hrbhot.github.io/posts/portainer/" />
+<meta property="article:published_time" content="2020-03-29T13:46:55+02:00" />
+<meta property="article:modified_time" content="2020-03-29T13:46:55+02:00" />
 
 
 
@@ -89,7 +83,7 @@ subl  " />
       <div class="content">
         
   <div class="post">
-    <h2 class="post-title"><a href="https://hrbhot.github.io/posts/mac%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%AD%E7%94%A8sublime%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6/">Mac命令行中用sublime打开文件</a></h2>
+    <h2 class="post-title"><a href="https://hrbhot.github.io/posts/portainer/">Portainer 的安装</a></h2>
     <div class="post-meta">
       
         <span class="post-date">
@@ -107,31 +101,20 @@ subl  " />
     <div class="post-content">
       
 
-<h1 id="mac命令行中用sublime打开文件">mac命令行中用sublime打开文件</h1>
+<h1 id="linux-安装">linux 安装</h1>
 
-<h2 id="使用-zsh-环境">使用<strong>zsh</strong>环境</h2>
+<p>Portainer 是一个docker web端的控制面板,目测非常简单方便。</p>
 
-<p>编辑 bash_profile文件</p>
+<h2 id="创建-volume">创建 volume</h2>
 
-<pre><code>vim ~/.bash_profile
+<pre><code>docker volume create portainer_data
 </code></pre>
 
-<p>在尾部添加内容</p>
+<h2 id="启动运行-portainer">启动运行 portainer</h2>
 
-<pre><code>alias subl=&quot;'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'&quot;
-alias nano=&quot;subl&quot;
-export EDITOR=&quot;subl&quot;
-</code></pre>
+<p>通过 9000端口访问 ，初始需要设置用户名密码。</p>
 
-<p>重新加载 source</p>
-
-<pre><code>source ~/.bash_profile
-
-</code></pre>
-
-<p>运行 测试</p>
-
-<pre><code>subl
+<pre><code>docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
 </code></pre>
 
     </div>
@@ -143,17 +126,10 @@ export EDITOR=&quot;subl&quot;
         </div>
         <div class="pagination__buttons">
           
-            <span class="button previous">
-              <a href="https://hrbhot.github.io/posts/portainer/">
-                <span class="button__icon">←</span>
-                <span class="button__text">Portainer 的安装</span>
-              </a>
-            </span>
-          
           
             <span class="button next">
-              <a href="https://hrbhot.github.io/posts/odoo%E5%AE%89%E8%A3%85%E7%AE%80%E8%BF%B0/">
-                <span class="button__text">Odoo安装简述</span>
+              <a href="https://hrbhot.github.io/posts/mac%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%AD%E7%94%A8sublime%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6/">
+                <span class="button__text">Mac命令行中用sublime打开文件</span>
                 <span class="button__icon">→</span>
               </a>
             </span>

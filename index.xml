@@ -8,10 +8,21 @@
     <language>zh-cn</language>
     <managingEditor>hrbhot@gmail.com (Yin)</managingEditor>
     <webMaster>hrbhot@gmail.com (Yin)</webMaster>
-    <lastBuildDate>Sun, 29 Mar 2020 10:27:04 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 29 Mar 2020 13:46:55 +0200</lastBuildDate>
     
 	<atom:link href="https://hrbhot.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Portainer 的安装</title>
+      <link>https://hrbhot.github.io/posts/portainer/</link>
+      <pubDate>Sun, 29 Mar 2020 13:46:55 +0200</pubDate>
+      <author>hrbhot@gmail.com (Yin)</author>
+      <guid>https://hrbhot.github.io/posts/portainer/</guid>
+      <description> linux 安装 Portainer 是一个docker web端的控制面板,目测非常简单方便。
+创建 volume docker volume create portainer_data  启动运行 portainer 通过 9000端口访问 ，初始需要设置用户名密码。
+docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer  </description>
+    </item>
     
     <item>
       <title>Mac命令行中用sublime打开文件</title>
