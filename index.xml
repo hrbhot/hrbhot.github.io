@@ -8,10 +8,23 @@
     <language>zh-cn</language>
     <managingEditor>hrbhot@gmail.com (Yin)</managingEditor>
     <webMaster>hrbhot@gmail.com (Yin)</webMaster>
-    <lastBuildDate>Sun, 12 Jan 2020 20:22:31 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 29 Mar 2020 10:27:04 +0200</lastBuildDate>
     
 	<atom:link href="https://hrbhot.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mac命令行中用sublime打开文件</title>
+      <link>https://hrbhot.github.io/posts/mac%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%AD%E7%94%A8sublime%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Sun, 29 Mar 2020 10:27:04 +0200</pubDate>
+      <author>hrbhot@gmail.com (Yin)</author>
+      <guid>https://hrbhot.github.io/posts/mac%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%AD%E7%94%A8sublime%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6/</guid>
+      <description> mac命令行中用sublime打开文件 使用zsh环境 编辑 bash_profile文件
+vim ~/.bash_profile  在尾部添加内容
+alias subl=&amp;quot;&#39;/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl&#39;&amp;quot; alias nano=&amp;quot;subl&amp;quot; export EDITOR=&amp;quot;subl&amp;quot;  重新加载 source
+source ~/.bash_profile  运行 测试
+subl  </description>
+    </item>
     
     <item>
       <title>Odoo安装简述</title>
