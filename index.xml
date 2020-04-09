@@ -8,10 +8,20 @@
     <language>zh-cn</language>
     <managingEditor>hrbhot@gmail.com (Yin)</managingEditor>
     <webMaster>hrbhot@gmail.com (Yin)</webMaster>
-    <lastBuildDate>Tue, 07 Apr 2020 22:51:38 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 09 Apr 2020 17:25:29 +0200</lastBuildDate>
     
 	<atom:link href="https://hrbhot.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tar命令打包排除某个目录或者文件</title>
+      <link>https://hrbhot.github.io/posts/tar%E5%91%BD%E4%BB%A4%E6%89%93%E5%8C%85%E6%8E%92%E9%99%A4%E6%9F%90%E4%B8%AA%E7%9B%AE%E5%BD%95%E6%88%96%E8%80%85%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Thu, 09 Apr 2020 17:25:29 +0200</pubDate>
+      <author>hrbhot@gmail.com (Yin)</author>
+      <guid>https://hrbhot.github.io/posts/tar%E5%91%BD%E4%BB%A4%E6%89%93%E5%8C%85%E6%8E%92%E9%99%A4%E6%9F%90%E4%B8%AA%E7%9B%AE%E5%BD%95%E6%88%96%E8%80%85%E6%96%87%E4%BB%B6/</guid>
+      <description> 用tar 打包，并排除其中某个目录或者文件。
+要打包test目录的结构 . ├── 1 │ ├── 1.txt │ └── 2.md ├── 2 │ └── 2.txt └── 3  打包排除目录1 tar zcvf test.tar.gz --eclude=test/1 test  打包排除目录1 和目录2 tar zcvf test.tar.gz --exclude=test/1 --exclude=test/2 test  打包排除目录1下面所有txt文件 tar zcvf test.tar.gz --exclude=test/1/*.txt test  </description>
+    </item>
     
     <item>
       <title>Docker搭建Prometheus监控系统</title>
