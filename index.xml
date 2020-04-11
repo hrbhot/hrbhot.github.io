@@ -8,10 +8,26 @@
     <language>zh-cn</language>
     <managingEditor>hrbhot@gmail.com (Yin)</managingEditor>
     <webMaster>hrbhot@gmail.com (Yin)</webMaster>
-    <lastBuildDate>Sat, 11 Apr 2020 18:37:48 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 11 Apr 2020 20:00:22 +0200</lastBuildDate>
     
 	<atom:link href="https://hrbhot.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ufw简单用法</title>
+      <link>https://hrbhot.github.io/posts/ufw%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Sat, 11 Apr 2020 20:00:22 +0200</pubDate>
+      <author>hrbhot@gmail.com (Yin)</author>
+      <guid>https://hrbhot.github.io/posts/ufw%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95/</guid>
+      <description> ufw 简单用法 展示当前策略
+ufw status  禁止9090端口
+ufw deny 9090  允许9090端口
+ufw allow 9090  删除某个规则 首先查看 规则序号
+ufw status numbered  删除
+ufw delete 序号  只允许指定IP地址访问指定端口
+例如9090端口只允许10.0.2.1访问 来规避prometheus的数据被外部发现
+ufw allow from 10.0.2.1 to any port 9090  </description>
+    </item>
     
     <item>
       <title>Docker安装php extension imagemagick</title>
