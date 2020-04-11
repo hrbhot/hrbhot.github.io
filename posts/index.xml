@@ -8,10 +8,20 @@
     <language>zh-cn</language>
     <managingEditor>hrbhot@gmail.com (Yin)</managingEditor>
     <webMaster>hrbhot@gmail.com (Yin)</webMaster>
-    <lastBuildDate>Sat, 11 Apr 2020 18:22:25 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 11 Apr 2020 18:37:48 +0200</lastBuildDate>
     
 	<atom:link href="https://hrbhot.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Docker安装php extension imagemagick</title>
+      <link>https://hrbhot.github.io/posts/docker%E5%AE%89%E8%A3%85php_extension_imagemagick/</link>
+      <pubDate>Sat, 11 Apr 2020 18:37:48 +0200</pubDate>
+      <author>hrbhot@gmail.com (Yin)</author>
+      <guid>https://hrbhot.github.io/posts/docker%E5%AE%89%E8%A3%85php_extension_imagemagick/</guid>
+      <description>进入docker内安装 apt-get update \ &amp;amp;&amp;amp; apt-get install -y libmagickwand-6.q16-dev --no-install-recommends \ &amp;amp;&amp;amp; yes&amp;quot;&amp;quot;|pecl install imagick \ &amp;amp;&amp;amp; echo &amp;quot;extension=imagick.so&amp;quot; &amp;gt; /usr/local/etc/php/conf.d/ext-imagick.ini  yes&amp;rdquo;&amp;rdquo; | 的意思是管道传递一个参数给后面的命令让pecl静默安装。
+上面代码有待优化，上述安装让docker增加了差不多200M。</description>
+    </item>
     
     <item>
       <title>解决docker内不能用php发邮件问题</title>

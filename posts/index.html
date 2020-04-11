@@ -36,7 +36,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://hrbhot.github.io/posts/" />
 
-<meta property="og:updated_time" content="2020-04-11T18:22:25+02:00" />
+<meta property="og:updated_time" content="2020-04-11T18:37:48+02:00" />
 
 
 
@@ -120,6 +120,29 @@
     
     
 
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="https://hrbhot.github.io/posts/docker%E5%AE%89%E8%A3%85php_extension_imagemagick/">Docker安装php extension imagemagick</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2020-04-11
+        </span>
+        
+        
+      </div>
+
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/docker%E5%AE%89%E8%A3%85php_extension_imagemagick/">Read more →</a></div>
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="https://hrbhot.github.io/posts/%E8%A7%A3%E5%86%B3docker%E5%86%85%E4%B8%8D%E8%83%BD%E7%94%A8php%E5%8F%91%E9%82%AE%E4%BB%B6%E9%97%AE%E9%A2%98/">解决docker内不能用php发邮件问题</a></h1>
@@ -342,36 +365,6 @@ global: scrape_interval: 5s scrape_configs: - job_name: &lsquo;prometheus&rsquo;
         
       </div>
       <div><a class="read-more button" href="/posts/docker%E7%8E%AF%E5%A2%83%E4%B8%8Bnextcloud%E9%85%8D%E7%BD%AEsmb%E6%9C%8D%E5%8A%A1/">Read more →</a></div>
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="https://hrbhot.github.io/posts/samba%E6%9C%8D%E5%8A%A1%E5%99%A8/">Samba服务器</a></h1>
-      <div class="post-meta">
-        <span class="post-date">
-          2019-10-30
-        </span>
-        
-        
-      </div>
-
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            ubuntu 安装 samba服务器
-sudo apt-get install samba samba-common  创建目录
-mkdir /data/samba chmod 777 /data/samba -R  设置用户名密码(yin是我的用户名)
-smbpasswd -a yin  修改 samba配置文件
-vim /etc/samba/smb.conf  在文件最后部分添加
-[share] comment = share folder browseable = yes path = /data/raid/nextcloud/data/samba #docker目录下的路径 create mask = 0700 directory mask = 0700 valid users = yin #用户名 force user = yin force group = yin public = yes available = yes writable = yes  重启samba服务器
-          
-        
-      </div>
-      <div><a class="read-more button" href="/posts/samba%E6%9C%8D%E5%8A%A1%E5%99%A8/">Read more →</a></div>
     </div>
     
     <div class="pagination">
