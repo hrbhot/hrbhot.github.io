@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>解决docker内不能用php发邮件问题 :: Mémo de Yin | 备忘录</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="用php mail发送邮件 ，docker 提示 cant connect to remote host (127.0.0.1): Connection refused。
+问题来源于sendmail
+解决办法 安装ssmtp 进入docker
+apt-get install -q -y ssmtp mailutils / echo &amp;quot;mailhub=smtp.gmail.com:587&amp;quot; &amp;gt;&amp;gt; /etc/ssmtp/ssmtp.conf / echo &amp;quot;AuthUser=youMail@gmail.com&amp;quot; &amp;gt;&amp;gt; /etc/ssmtp/ssmtp.conf / echo &amp;quot;AuthPass=youPassword&amp;quot; &amp;gt;&amp;gt; /etc/ssmtp/ssmtp.conf / echo &amp;quot;UseTLS=YES&amp;quot; &amp;gt;&amp;gt; /etc/ssmtp/ssmtp.conf / echo &amp;quot;UseSTARTTLS=YES&amp;quot; &amp;gt;&amp;gt; /etc/ssmtp/ssmtp.conf / # 显示 发件人 echo &amp;quot;FromLineOverride=YES&amp;quot; &amp;gt;&amp;gt; /etc/ssmtp/ssmtp.conf #如果已经在php.ini里面设置了这步可以省却 echo &amp;quot;sendmail_path=sendmail -i -t&amp;quot; &amp;gt;&amp;gt; /usr/local/etc/php/conf.d/php-sendmail.ini  测试发送 下面2个方法都可以
+ echo &amp;quot;Subject: Testing Email&amp;quot; | /usr/lib/sendmail -s youMail@gmail."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://hrbhot.github.io/posts/%E8%A7%A3%E5%86%B3docker%E5%86%85%E4%B8%8D%E8%83%BD%E7%94%A8php%E5%8F%91%E9%82%AE%E4%BB%B6%E9%97%AE%E9%A2%98/" />
+
+
+
+
+
+<link rel="stylesheet" href="https://hrbhot.github.io/assets/style.css">
+
+
+<link rel="stylesheet" href="https://hrbhot.github.io/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://hrbhot.github.io/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="https://hrbhot.github.io/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="解决docker内不能用php发邮件问题"/>
+<meta name="twitter:description" content="用php mail发送邮件 ，docker 提示 cant connect to remote host (127.0.0.1): Connection refused。
+问题来源于sendmail
+解决办法 安装ssmtp 进入docker
+apt-get install -q -y ssmtp mailutils / echo &quot;mailhub=smtp.gmail.com:587&quot; &gt;&gt; /etc/ssmtp/ssmtp.conf / echo &quot;AuthUser=youMail@gmail.com&quot; &gt;&gt; /etc/ssmtp/ssmtp.conf / echo &quot;AuthPass=youPassword&quot; &gt;&gt; /etc/ssmtp/ssmtp.conf / echo &quot;UseTLS=YES&quot; &gt;&gt; /etc/ssmtp/ssmtp.conf / echo &quot;UseSTARTTLS=YES&quot; &gt;&gt; /etc/ssmtp/ssmtp.conf / # 显示 发件人 echo &quot;FromLineOverride=YES&quot; &gt;&gt; /etc/ssmtp/ssmtp.conf #如果已经在php.ini里面设置了这步可以省却 echo &quot;sendmail_path=sendmail -i -t&quot; &gt;&gt; /usr/local/etc/php/conf.d/php-sendmail.ini  测试发送 下面2个方法都可以
+ echo &quot;Subject: Testing Email&quot; | /usr/lib/sendmail -s youMail@gmail."/>
+
+
+
+<meta property="og:title" content="解决docker内不能用php发邮件问题" />
+<meta property="og:description" content="用php mail发送邮件 ，docker 提示 cant connect to remote host (127.0.0.1): Connection refused。
+问题来源于sendmail
+解决办法 安装ssmtp 进入docker
+apt-get install -q -y ssmtp mailutils / echo &quot;mailhub=smtp.gmail.com:587&quot; &gt;&gt; /etc/ssmtp/ssmtp.conf / echo &quot;AuthUser=youMail@gmail.com&quot; &gt;&gt; /etc/ssmtp/ssmtp.conf / echo &quot;AuthPass=youPassword&quot; &gt;&gt; /etc/ssmtp/ssmtp.conf / echo &quot;UseTLS=YES&quot; &gt;&gt; /etc/ssmtp/ssmtp.conf / echo &quot;UseSTARTTLS=YES&quot; &gt;&gt; /etc/ssmtp/ssmtp.conf / # 显示 发件人 echo &quot;FromLineOverride=YES&quot; &gt;&gt; /etc/ssmtp/ssmtp.conf #如果已经在php.ini里面设置了这步可以省却 echo &quot;sendmail_path=sendmail -i -t&quot; &gt;&gt; /usr/local/etc/php/conf.d/php-sendmail.ini  测试发送 下面2个方法都可以
+ echo &quot;Subject: Testing Email&quot; | /usr/lib/sendmail -s youMail@gmail." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hrbhot.github.io/posts/%E8%A7%A3%E5%86%B3docker%E5%86%85%E4%B8%8D%E8%83%BD%E7%94%A8php%E5%8F%91%E9%82%AE%E4%BB%B6%E9%97%AE%E9%A2%98/" />
+<meta property="article:published_time" content="2020-04-11T18:22:25+02:00" />
+<meta property="article:modified_time" content="2020-04-11T18:22:25+02:00" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 50 50">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">Mémo de Yin | 备忘录</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/">Home</a></li>
+        
+      
+        
+          <li><a href="/posts">Posts</a></li>
+        
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/">Home</a></li>
+      
+    
+      
+        <li><a href="/posts">Posts</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="post">
+    <h2 class="post-title"><a href="https://hrbhot.github.io/posts/%E8%A7%A3%E5%86%B3docker%E5%86%85%E4%B8%8D%E8%83%BD%E7%94%A8php%E5%8F%91%E9%82%AE%E4%BB%B6%E9%97%AE%E9%A2%98/">解决docker内不能用php发邮件问题</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            2020-04-11
+        </span>
+      
+      
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      
+
+<p>用php mail发送邮件 ，docker 提示 cant connect to remote host (127.0.0.1): Connection refused。</p>
+
+<p>问题来源于sendmail</p>
+
+<h3 id="解决办法-安装ssmtp">解决办法 安装ssmtp</h3>
+
+<p>进入docker</p>
+
+<pre><code>apt-get install -q -y ssmtp mailutils /
+echo &quot;mailhub=smtp.gmail.com:587&quot; &gt;&gt; /etc/ssmtp/ssmtp.conf /
+echo &quot;AuthUser=youMail@gmail.com&quot; &gt;&gt; /etc/ssmtp/ssmtp.conf /
+echo &quot;AuthPass=youPassword&quot; &gt;&gt; /etc/ssmtp/ssmtp.conf /
+echo &quot;UseTLS=YES&quot; &gt;&gt; /etc/ssmtp/ssmtp.conf /
+echo &quot;UseSTARTTLS=YES&quot; &gt;&gt; /etc/ssmtp/ssmtp.conf /
+# 显示 发件人
+echo &quot;FromLineOverride=YES&quot; &gt;&gt; /etc/ssmtp/ssmtp.conf 
+#如果已经在php.ini里面设置了这步可以省却 
+echo &quot;sendmail_path=sendmail -i -t&quot; &gt;&gt; /usr/local/etc/php/conf.d/php-sendmail.ini 
+
+</code></pre>
+
+<h3 id="测试发送">测试发送</h3>
+
+<p>下面2个方法都可以</p>
+
+<pre><code>
+echo &quot;Subject: Testing Email&quot; | /usr/lib/sendmail -s youMail@gmail.com
+
+echo &quot;Subject: Testing Email&quot; | /usr/sbin/sendmail -s youMail@gmail.com
+</code></pre>
+
+    </div>
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h">Read other posts</span>
+          <hr />
+        </div>
+        <div class="pagination__buttons">
+          
+          
+            <span class="button next">
+              <a href="https://hrbhot.github.io/posts/tar%E5%91%BD%E4%BB%A4%E6%89%93%E5%8C%85%E6%8E%92%E9%99%A4%E6%9F%90%E4%B8%AA%E7%9B%AE%E5%BD%95%E6%88%96%E8%80%85%E6%96%87%E4%BB%B6/">
+                <span class="button__text">Tar命令打包排除某个目录或者文件</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 50 50">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">Mémo de Yin | 备忘录</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2020 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="https://hrbhot.github.io/assets/main.js"></script>
+<script src="https://hrbhot.github.io/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

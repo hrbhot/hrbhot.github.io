@@ -8,10 +8,23 @@
     <language>zh-cn</language>
     <managingEditor>hrbhot@gmail.com (Yin)</managingEditor>
     <webMaster>hrbhot@gmail.com (Yin)</webMaster>
-    <lastBuildDate>Thu, 09 Apr 2020 17:25:29 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 11 Apr 2020 18:22:25 +0200</lastBuildDate>
     
 	<atom:link href="https://hrbhot.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>解决docker内不能用php发邮件问题</title>
+      <link>https://hrbhot.github.io/posts/%E8%A7%A3%E5%86%B3docker%E5%86%85%E4%B8%8D%E8%83%BD%E7%94%A8php%E5%8F%91%E9%82%AE%E4%BB%B6%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sat, 11 Apr 2020 18:22:25 +0200</pubDate>
+      <author>hrbhot@gmail.com (Yin)</author>
+      <guid>https://hrbhot.github.io/posts/%E8%A7%A3%E5%86%B3docker%E5%86%85%E4%B8%8D%E8%83%BD%E7%94%A8php%E5%8F%91%E9%82%AE%E4%BB%B6%E9%97%AE%E9%A2%98/</guid>
+      <description>用php mail发送邮件 ，docker 提示 cant connect to remote host (127.0.0.1): Connection refused。
+问题来源于sendmail
+解决办法 安装ssmtp 进入docker
+apt-get install -q -y ssmtp mailutils / echo &amp;quot;mailhub=smtp.gmail.com:587&amp;quot; &amp;gt;&amp;gt; /etc/ssmtp/ssmtp.conf / echo &amp;quot;AuthUser=youMail@gmail.com&amp;quot; &amp;gt;&amp;gt; /etc/ssmtp/ssmtp.conf / echo &amp;quot;AuthPass=youPassword&amp;quot; &amp;gt;&amp;gt; /etc/ssmtp/ssmtp.conf / echo &amp;quot;UseTLS=YES&amp;quot; &amp;gt;&amp;gt; /etc/ssmtp/ssmtp.conf / echo &amp;quot;UseSTARTTLS=YES&amp;quot; &amp;gt;&amp;gt; /etc/ssmtp/ssmtp.conf / # 显示 发件人 echo &amp;quot;FromLineOverride=YES&amp;quot; &amp;gt;&amp;gt; /etc/ssmtp/ssmtp.conf #如果已经在php.ini里面设置了这步可以省却 echo &amp;quot;sendmail_path=sendmail -i -t&amp;quot; &amp;gt;&amp;gt; /usr/local/etc/php/conf.d/php-sendmail.ini  测试发送 下面2个方法都可以
+ echo &amp;quot;Subject: Testing Email&amp;quot; | /usr/lib/sendmail -s youMail@gmail.</description>
+    </item>
     
     <item>
       <title>Tar命令打包排除某个目录或者文件</title>

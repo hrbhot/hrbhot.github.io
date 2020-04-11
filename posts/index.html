@@ -36,7 +36,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://hrbhot.github.io/posts/" />
 
-<meta property="og:updated_time" content="2020-04-09T17:25:29+02:00" />
+<meta property="og:updated_time" content="2020-04-11T18:22:25+02:00" />
 
 
 
@@ -120,6 +120,35 @@
     
     
 
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="https://hrbhot.github.io/posts/%E8%A7%A3%E5%86%B3docker%E5%86%85%E4%B8%8D%E8%83%BD%E7%94%A8php%E5%8F%91%E9%82%AE%E4%BB%B6%E9%97%AE%E9%A2%98/">解决docker内不能用php发邮件问题</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2020-04-11
+        </span>
+        
+        
+      </div>
+
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            用php mail发送邮件 ，docker 提示 cant connect to remote host (127.0.0.1): Connection refused。
+问题来源于sendmail
+解决办法 安装ssmtp 进入docker
+apt-get install -q -y ssmtp mailutils / echo &quot;mailhub=smtp.gmail.com:587&quot; &gt;&gt; /etc/ssmtp/ssmtp.conf / echo &quot;AuthUser=youMail@gmail.com&quot; &gt;&gt; /etc/ssmtp/ssmtp.conf / echo &quot;AuthPass=youPassword&quot; &gt;&gt; /etc/ssmtp/ssmtp.conf / echo &quot;UseTLS=YES&quot; &gt;&gt; /etc/ssmtp/ssmtp.conf / echo &quot;UseSTARTTLS=YES&quot; &gt;&gt; /etc/ssmtp/ssmtp.conf / # 显示 发件人 echo &quot;FromLineOverride=YES&quot; &gt;&gt; /etc/ssmtp/ssmtp.conf #如果已经在php.ini里面设置了这步可以省却 echo &quot;sendmail_path=sendmail -i -t&quot; &gt;&gt; /usr/local/etc/php/conf.d/php-sendmail.ini  测试发送 下面2个方法都可以
+ echo &quot;Subject: Testing Email&quot; | /usr/lib/sendmail -s youMail@gmail.
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/%E8%A7%A3%E5%86%B3docker%E5%86%85%E4%B8%8D%E8%83%BD%E7%94%A8php%E5%8F%91%E9%82%AE%E4%BB%B6%E9%97%AE%E9%A2%98/">Read more →</a></div>
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="https://hrbhot.github.io/posts/tar%E5%91%BD%E4%BB%A4%E6%89%93%E5%8C%85%E6%8E%92%E9%99%A4%E6%9F%90%E4%B8%AA%E7%9B%AE%E5%BD%95%E6%88%96%E8%80%85%E6%96%87%E4%BB%B6/">Tar命令打包排除某个目录或者文件</a></h1>
@@ -343,29 +372,6 @@ vim /etc/samba/smb.conf  在文件最后部分添加
         
       </div>
       <div><a class="read-more button" href="/posts/samba%E6%9C%8D%E5%8A%A1%E5%99%A8/">Read more →</a></div>
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="https://hrbhot.github.io/posts/nextcloud%E6%B7%BB%E5%8A%A0smb%E6%89%A9%E5%B1%95/">Nextcloud添加smb扩展</a></h1>
-      <div class="post-meta">
-        <span class="post-date">
-          2019-10-29
-        </span>
-        
-        
-      </div>
-
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      <div><a class="read-more button" href="/posts/nextcloud%E6%B7%BB%E5%8A%A0smb%E6%89%A9%E5%B1%95/">Read more →</a></div>
     </div>
     
     <div class="pagination">
