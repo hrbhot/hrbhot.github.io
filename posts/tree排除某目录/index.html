@@ -2,21 +2,17 @@
 <html lang="en">
   <head>
     
-      <title>Ufw简单用法 :: Mémo de Yin | 备忘录</title>
+      <title>使用tree命令排除某目录的方法  :: Mémo de Yin | 备忘录</title>
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content=" ufw 简单用法 展示当前策略
-ufw status  禁止9090端口
-ufw deny 9090  允许9090端口
-ufw allow 9090  删除某个规则 首先查看 规则序号
-ufw status numbered  删除
-ufw delete 序号  只允许指定IP地址访问指定端口
-例如9090端口只允许10.0.2.1访问 来规避prometheus的数据被外部发现
-ufw allow from 10.0.2.1 to any port 9090  "/>
+<meta name="description" content="当前路径有如下目录文件
+Config Controllers Models Routes go.mod go.sum main.go pkg  排除pkg目录
+tree -I &amp;quot;./pkg&amp;quot;  得到排除的tree结果
+. ├── Config │ └── Database.go ├── Controllers │ └── Todo.go ├── Models │ ├── Model.go │ └── Todos.go ├── Routes │ └── Routes.go ├── go.mod ├── go.sum └── main.go  "/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
-<link rel="canonical" href="https://hrbhot.github.io/posts/ufw%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95/" />
+<link rel="canonical" href="https://hrbhot.github.io/posts/tree%E6%8E%92%E9%99%A4%E6%9F%90%E7%9B%AE%E5%BD%95/" />
 
 
 
@@ -33,31 +29,23 @@ ufw allow from 10.0.2.1 to any port 9090  "/>
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Ufw简单用法"/>
-<meta name="twitter:description" content=" ufw 简单用法 展示当前策略
-ufw status  禁止9090端口
-ufw deny 9090  允许9090端口
-ufw allow 9090  删除某个规则 首先查看 规则序号
-ufw status numbered  删除
-ufw delete 序号  只允许指定IP地址访问指定端口
-例如9090端口只允许10.0.2.1访问 来规避prometheus的数据被外部发现
-ufw allow from 10.0.2.1 to any port 9090  "/>
+<meta name="twitter:title" content="使用tree命令排除某目录的方法 "/>
+<meta name="twitter:description" content="当前路径有如下目录文件
+Config Controllers Models Routes go.mod go.sum main.go pkg  排除pkg目录
+tree -I &quot;./pkg&quot;  得到排除的tree结果
+. ├── Config │ └── Database.go ├── Controllers │ └── Todo.go ├── Models │ ├── Model.go │ └── Todos.go ├── Routes │ └── Routes.go ├── go.mod ├── go.sum └── main.go  "/>
 
 
 
-<meta property="og:title" content="Ufw简单用法" />
-<meta property="og:description" content=" ufw 简单用法 展示当前策略
-ufw status  禁止9090端口
-ufw deny 9090  允许9090端口
-ufw allow 9090  删除某个规则 首先查看 规则序号
-ufw status numbered  删除
-ufw delete 序号  只允许指定IP地址访问指定端口
-例如9090端口只允许10.0.2.1访问 来规避prometheus的数据被外部发现
-ufw allow from 10.0.2.1 to any port 9090  " />
+<meta property="og:title" content="使用tree命令排除某目录的方法 " />
+<meta property="og:description" content="当前路径有如下目录文件
+Config Controllers Models Routes go.mod go.sum main.go pkg  排除pkg目录
+tree -I &quot;./pkg&quot;  得到排除的tree结果
+. ├── Config │ └── Database.go ├── Controllers │ └── Todo.go ├── Models │ ├── Model.go │ └── Todos.go ├── Routes │ └── Routes.go ├── go.mod ├── go.sum └── main.go  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://hrbhot.github.io/posts/ufw%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95/" />
-<meta property="article:published_time" content="2020-04-11T20:00:22+02:00" />
-<meta property="article:modified_time" content="2020-04-11T20:00:22+02:00" />
+<meta property="og:url" content="https://hrbhot.github.io/posts/tree%E6%8E%92%E9%99%A4%E6%9F%90%E7%9B%AE%E5%BD%95/" />
+<meta property="article:published_time" content="2020-04-12T09:34:06+02:00" />
+<meta property="article:modified_time" content="2020-04-12T09:34:06+02:00" />
 
 
 
@@ -133,11 +121,11 @@ ufw allow from 10.0.2.1 to any port 9090  " />
       <div class="content">
         
   <div class="post">
-    <h2 class="post-title"><a href="https://hrbhot.github.io/posts/ufw%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95/">Ufw简单用法</a></h2>
+    <h2 class="post-title"><a href="https://hrbhot.github.io/posts/tree%E6%8E%92%E9%99%A4%E6%9F%90%E7%9B%AE%E5%BD%95/">使用tree命令排除某目录的方法</a></h2>
     <div class="post-meta">
       
         <span class="post-date">
-            2020-04-11
+            2020-04-12
         </span>
       
       
@@ -149,41 +137,32 @@ ufw allow from 10.0.2.1 to any port 9090  " />
     
 
     <div class="post-content">
-      
+      <p>当前路径有如下目录文件</p>
 
-<h3 id="ufw-简单用法">ufw 简单用法</h3>
-
-<p>展示当前策略</p>
-
-<pre><code>ufw status
+<pre><code>Config      Controllers Models      Routes      go.mod      go.sum      main.go     pkg
 </code></pre>
 
-<p>禁止9090端口</p>
+<p>排除pkg目录</p>
 
-<pre><code>ufw deny 9090
+<pre><code>tree -I &quot;./pkg&quot;
 </code></pre>
 
-<p>允许9090端口</p>
+<p>得到排除的tree结果</p>
 
-<pre><code>ufw allow 9090
-</code></pre>
+<pre><code>.
+├── Config
+│   └── Database.go
+├── Controllers
+│   └── Todo.go
+├── Models
+│   ├── Model.go
+│   └── Todos.go
+├── Routes
+│   └── Routes.go
+├── go.mod
+├── go.sum
+└── main.go
 
-<p>删除某个规则
-首先查看 规则序号</p>
-
-<pre><code>ufw status numbered
-</code></pre>
-
-<p>删除</p>
-
-<pre><code>ufw delete 序号
-</code></pre>
-
-<p>只允许指定IP地址访问指定端口</p>
-
-<p>例如9090端口只允许10.0.2.1访问 来规避prometheus的数据被外部发现</p>
-
-<pre><code>ufw allow from 10.0.2.1 to any port 9090
 </code></pre>
 
     </div>
@@ -195,17 +174,10 @@ ufw allow from 10.0.2.1 to any port 9090  " />
         </div>
         <div class="pagination__buttons">
           
-            <span class="button previous">
-              <a href="https://hrbhot.github.io/posts/tree%E6%8E%92%E9%99%A4%E6%9F%90%E7%9B%AE%E5%BD%95/">
-                <span class="button__icon">←</span>
-                <span class="button__text">使用tree命令排除某目录的方法 </span>
-              </a>
-            </span>
-          
           
             <span class="button next">
-              <a href="https://hrbhot.github.io/posts/docker%E5%AE%89%E8%A3%85php_extension_imagemagick/">
-                <span class="button__text">Docker安装php extension imagemagick</span>
+              <a href="https://hrbhot.github.io/posts/ufw%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95/">
+                <span class="button__text">Ufw简单用法</span>
                 <span class="button__icon">→</span>
               </a>
             </span>

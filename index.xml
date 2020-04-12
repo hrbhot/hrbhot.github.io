@@ -8,10 +8,22 @@
     <language>zh-cn</language>
     <managingEditor>hrbhot@gmail.com (Yin)</managingEditor>
     <webMaster>hrbhot@gmail.com (Yin)</webMaster>
-    <lastBuildDate>Sat, 11 Apr 2020 20:00:22 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 12 Apr 2020 09:34:06 +0200</lastBuildDate>
     
 	<atom:link href="https://hrbhot.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>使用tree命令排除某目录的方法 </title>
+      <link>https://hrbhot.github.io/posts/tree%E6%8E%92%E9%99%A4%E6%9F%90%E7%9B%AE%E5%BD%95/</link>
+      <pubDate>Sun, 12 Apr 2020 09:34:06 +0200</pubDate>
+      <author>hrbhot@gmail.com (Yin)</author>
+      <guid>https://hrbhot.github.io/posts/tree%E6%8E%92%E9%99%A4%E6%9F%90%E7%9B%AE%E5%BD%95/</guid>
+      <description>当前路径有如下目录文件
+Config Controllers Models Routes go.mod go.sum main.go pkg  排除pkg目录
+tree -I &amp;quot;./pkg&amp;quot;  得到排除的tree结果
+. ├── Config │ └── Database.go ├── Controllers │ └── Todo.go ├── Models │ ├── Model.go │ └── Todos.go ├── Routes │ └── Routes.go ├── go.mod ├── go.sum └── main.go  </description>
+    </item>
     
     <item>
       <title>Ufw简单用法</title>
