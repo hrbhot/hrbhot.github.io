@@ -8,10 +8,20 @@
     <language>zh-cn</language>
     <managingEditor>hrbhot@gmail.com (Yin)</managingEditor>
     <webMaster>hrbhot@gmail.com (Yin)</webMaster>
-    <lastBuildDate>Fri, 17 Apr 2020 10:36:04 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 17 Apr 2020 17:17:13 +0200</lastBuildDate>
     
 	<atom:link href="https://hrbhot.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Elastic_stack_kibana_apache_nginx日志</title>
+      <link>https://hrbhot.github.io/posts/elastic_stack_kibana_apache%E6%97%A5%E5%BF%97/</link>
+      <pubDate>Fri, 17 Apr 2020 17:17:13 +0200</pubDate>
+      <author>hrbhot@gmail.com (Yin)</author>
+      <guid>https://hrbhot.github.io/posts/elastic_stack_kibana_apache%E6%97%A5%E5%BF%97/</guid>
+      <description>配置 Elastic和kibana监控apache/nginx 日志
+elastic 监控 apache 日志  elastic stack # 开源日志平台 由elasticsearch ,logstash，kibana，beats四个组件组成 kibana # 前端web展示日志分析和内容 kafka # 消息队列 filebeat # 将系统日志可视化，把数据发送给 logstash和elasticsearch logstash # 收集分析存储工具 elasticsearch # 搜索分析存储的数据,基于JSON分布式搜索  拉es镜像 docker pull elasticsearch:6.7.0  创建es配置文件和挂载目录 cd / mkdir -p mnt/elasticsearch cd mnt/elasticsearch mkdir config mkdir matser mkdir slave chmod 777 master chmod 777 slave  调高jvm线程 vim /etc/sysctl.conf # 添加这个 vm.max_map_count=262144 # 保存后执行这个命令 sysctl -p  matser.yml cluster.</description>
+    </item>
     
     <item>
       <title>apache服务器的域名ssl配置</title>

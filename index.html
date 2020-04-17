@@ -37,7 +37,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://hrbhot.github.io/" />
 
-<meta property="og:updated_time" content="2020-04-17T10:36:04+02:00" />
+<meta property="og:updated_time" content="2020-04-17T17:17:13+02:00" />
 
 
 
@@ -123,6 +123,32 @@
     
     
 
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="https://hrbhot.github.io/posts/elastic_stack_kibana_apache%E6%97%A5%E5%BF%97/">Elastic_stack_kibana_apache_nginx日志</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2020-04-17
+        </span>
+        
+        
+      </div>
+
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            配置 Elastic和kibana监控apache/nginx 日志
+elastic 监控 apache 日志  elastic stack # 开源日志平台 由elasticsearch ,logstash，kibana，beats四个组件组成 kibana # 前端web展示日志分析和内容 kafka # 消息队列 filebeat # 将系统日志可视化，把数据发送给 logstash和elasticsearch logstash # 收集分析存储工具 elasticsearch # 搜索分析存储的数据,基于JSON分布式搜索  拉es镜像 docker pull elasticsearch:6.7.0  创建es配置文件和挂载目录 cd / mkdir -p mnt/elasticsearch cd mnt/elasticsearch mkdir config mkdir matser mkdir slave chmod 777 master chmod 777 slave  调高jvm线程 vim /etc/sysctl.conf # 添加这个 vm.max_map_count=262144 # 保存后执行这个命令 sysctl -p  matser.yml cluster.
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/elastic_stack_kibana_apache%E6%97%A5%E5%BF%97/">Read more →</a></div>
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="https://hrbhot.github.io/posts/apache%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%9F%E5%90%8D%E9%85%8D%E7%BD%AE/">apache服务器的域名ssl配置</a></h1>
@@ -352,31 +378,6 @@ global: scrape_interval: 5s scrape_configs: - job_name: &lsquo;prometheus&rsquo;
         
       </div>
       <div><a class="read-more button" href="/posts/mac%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%AD%E7%94%A8sublime%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6/">Read more →</a></div>
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="https://hrbhot.github.io/posts/odoo%E5%AE%89%E8%A3%85%E7%AE%80%E8%BF%B0/">Odoo安装简述</a></h1>
-      <div class="post-meta">
-        <span class="post-date">
-          2020-01-12
-        </span>
-        
-        
-      </div>
-
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            odoo 安装 安装 postgresql 12 wget &ndash;quiet -O - <a href="https://www.postgresql.org/media/keys/ACCC4CF8.asc">https://www.postgresql.org/media/keys/ACCC4CF8.asc</a> | sudo apt-key add - echo &quot;deb <a href="http://apt.postgresql.org/pub/repos/apt/">http://apt.postgresql.org/pub/repos/apt/</a> <code>lsb_release -cs</code>-pgdg main&quot; |sudo tee /etc/apt/sources.list.d/pgdg.list sudo apt -y install postgresql-12 postgresql-client-12  创建 postgresql odoo用户和密码 sudo adduser &ndash;system &ndash;home=/opt/odoo &ndash;group odoo  测试 postgresql sudo su - postgres psql  配置 postgresql 允许外部访问 vim /etc/postgresql/12/main/postgresql.conf # Listen on all interfaces listen_addresses = &lsquo;*&rsquo; ### python3环境准备  sudo apt install python3-dev python3-pip -y sudo apt install build-essential libxslt-dev libzip-dev libldap2-dev libsasl2-dev libssl-dev -y
-          
-        
-      </div>
-      <div><a class="read-more button" href="/posts/odoo%E5%AE%89%E8%A3%85%E7%AE%80%E8%BF%B0/">Read more →</a></div>
     </div>
     
     <div class="pagination">
