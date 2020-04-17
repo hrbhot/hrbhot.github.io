@@ -8,10 +8,23 @@
     <language>zh-cn</language>
     <managingEditor>hrbhot@gmail.com (Yin)</managingEditor>
     <webMaster>hrbhot@gmail.com (Yin)</webMaster>
-    <lastBuildDate>Sun, 12 Apr 2020 09:34:06 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 17 Apr 2020 10:36:04 +0200</lastBuildDate>
     
 	<atom:link href="https://hrbhot.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>apache服务器的域名ssl配置</title>
+      <link>https://hrbhot.github.io/posts/apache%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%9F%E5%90%8D%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Fri, 17 Apr 2020 10:36:04 +0200</pubDate>
+      <author>hrbhot@gmail.com (Yin)</author>
+      <guid>https://hrbhot.github.io/posts/apache%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%9F%E5%90%8D%E9%85%8D%E7%BD%AE/</guid>
+      <description>在/etc/apache2/apache2.conf 里面添加域名配置的路径方便管理，因为要配置多域名
+# Vhost IncludeOptional conf.d/vhost/*.conf  在/etc/apache2/conf.d/vhost/ 目录下增加a1.conf ，a2.conf 代表a1网站和a2网站
+ 在/etc/apache2/ssl/a1 目录下放置 a1网站的ssl证书文件
+  a1.conf的内容如下
+&amp;lt;VirtualHost *:80&amp;gt; ServerName a1.com # a1的域名 ServerAlias www.a1.com ServerAdmin admin@gmail.com #管理员邮箱 DocumentRoot /data/web # 网站存放路径 &amp;lt;Directory /data/web&amp;gt; # 网站存放路径 DirectoryIndex index.php Options FollowSymLinks AllowOverride All Require all granted &amp;lt;/Directory&amp;gt; ErrorLog ${APACHE_LOG_DIR}/ee-error.log #错误日志路径 CustomLog ${APACHE_LOG_DIR}/ee-access.log combined #访问日志路径 # ssl配置部分 &amp;lt;/VirtualHost&amp;gt; &amp;lt;IfModule mod_ssl.c&amp;gt; &amp;lt;VirtualHost *:443&amp;gt; ServerAdmin admin@gmail.com ServerName a1.com ServerAlias www.a1.com DocumentRoot /data/web	#网站存放路径 &amp;lt;Directory /data/web/&amp;gt; #网站存放路径 DirectoryIndex index.</description>
+    </item>
     
     <item>
       <title>使用tree命令排除某目录的方法 </title>

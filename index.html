@@ -37,7 +37,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://hrbhot.github.io/" />
 
-<meta property="og:updated_time" content="2020-04-12T09:34:06+02:00" />
+<meta property="og:updated_time" content="2020-04-17T10:36:04+02:00" />
 
 
 
@@ -123,6 +123,38 @@
     
     
 
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="https://hrbhot.github.io/posts/apache%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%9F%E5%90%8D%E9%85%8D%E7%BD%AE/">apache服务器的域名ssl配置</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2020-04-17
+        </span>
+        
+        
+      </div>
+
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            <p>在/etc/apache2/apache2.conf 里面添加域名配置的路径方便管理，因为要配置多域名</p>
+
+<h1 id="vhost-includeoptional-conf-d-vhost-conf-在-etc-apache2-conf-d-vhost-目录下增加a1-conf-a2-conf-代表a1网站和a2网站">Vhost IncludeOptional conf.d/vhost/*.conf  在/etc/apache2/conf.d/vhost/ 目录下增加a1.conf ，a2.conf 代表a1网站和a2网站</h1>
+
+<p>在/etc/apache2/ssl/a1 目录下放置 a1网站的ssl证书文件
+  a1.conf的内容如下
+&lt;VirtualHost *:80&gt; ServerName a1.com # a1的域名 ServerAlias www.a1.com ServerAdmin admin@gmail.com #管理员邮箱 DocumentRoot /data/web # 网站存放路径 &lt;Directory /data/web&gt; # 网站存放路径 DirectoryIndex index.php Options FollowSymLinks AllowOverride All Require all granted &lt;/Directory&gt; ErrorLog ${APACHE_LOG_DIR}/ee-error.log #错误日志路径 CustomLog ${APACHE_LOG_DIR}/ee-access.log combined #访问日志路径 # ssl配置部分 &lt;/VirtualHost&gt; &lt;IfModule mod_ssl.c&gt; &lt;VirtualHost *:443&gt; ServerAdmin admin@gmail.com ServerName a1.com ServerAlias www.a1.com DocumentRoot /data/web   #网站存放路径 &lt;Directory /data/web/&gt; #网站存放路径 DirectoryIndex index.</p>
+
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/apache%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%9F%E5%90%8D%E9%85%8D%E7%BD%AE/">Read more →</a></div>
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="https://hrbhot.github.io/posts/tree%E6%8E%92%E9%99%A4%E6%9F%90%E7%9B%AE%E5%BD%95/">使用tree命令排除某目录的方法</a></h1>
@@ -345,29 +377,6 @@ global: scrape_interval: 5s scrape_configs: - job_name: &lsquo;prometheus&rsquo;
         
       </div>
       <div><a class="read-more button" href="/posts/odoo%E5%AE%89%E8%A3%85%E7%AE%80%E8%BF%B0/">Read more →</a></div>
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="https://hrbhot.github.io/posts/mac-font-chrome/">Mac Font Chrome</a></h1>
-      <div class="post-meta">
-        <span class="post-date">
-          2020-01-12
-        </span>
-        
-        
-      </div>
-
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      <div><a class="read-more button" href="/posts/mac-font-chrome/">Read more →</a></div>
     </div>
     
     <div class="pagination">
