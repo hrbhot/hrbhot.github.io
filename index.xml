@@ -23,7 +23,7 @@
 # Vhost IncludeOptional conf.d/vhost/*.conf  在/etc/apache2/conf.d/vhost/ 目录下增加a1.conf ，a2.conf 代表a1网站和a2网站
  在/etc/apache2/ssl/a1 目录下放置 a1网站的ssl证书文件
   a1.conf的内容如下
-&amp;lt;VirtualHost *:80&amp;gt; ServerName a1.com # a1的域名 ServerAlias www.a1.com ServerAdmin admin@gmail.com #管理员邮箱 DocumentRoot /data/web # 网站存放路径 &amp;lt;Directory /data/web&amp;gt; # 网站存放路径 DirectoryIndex index.php Options FollowSymLinks AllowOverride All Require all granted &amp;lt;/Directory&amp;gt; ErrorLog ${APACHE_LOG_DIR}/ee-error.log #错误日志路径 CustomLog ${APACHE_LOG_DIR}/ee-access.log combined #访问日志路径 # ssl配置部分 &amp;lt;/VirtualHost&amp;gt; &amp;lt;IfModule mod_ssl.c&amp;gt; &amp;lt;VirtualHost *:443&amp;gt; ServerAdmin admin@gmail.com ServerName a1.com ServerAlias www.a1.com DocumentRoot /data/web	#网站存放路径 &amp;lt;Directory /data/web/&amp;gt; #网站存放路径 DirectoryIndex index.</description>
+&amp;lt;VirtualHost *:80&amp;gt; ServerName a1.com # a1的域名 ServerAlias www.a1.com ServerAdmin admin@gmail.com #管理员邮箱 DocumentRoot /data/web # 网站存放路径 &amp;lt;Directory /data/web&amp;gt; # 网站存放路径 DirectoryIndex index.php Options FollowSymLinks AllowOverride All Require all granted &amp;lt;/Directory&amp;gt; ErrorLog ${APACHE_LOG_DIR}/a1-error.log #错误日志路径 CustomLog ${APACHE_LOG_DIR}/a1-access.log combined #访问日志路径 # ssl配置部分 &amp;lt;/VirtualHost&amp;gt; &amp;lt;IfModule mod_ssl.c&amp;gt; &amp;lt;VirtualHost *:443&amp;gt; ServerAdmin admin@gmail.com ServerName a1.com ServerAlias www.a1.com DocumentRoot /data/web	#网站存放路径 &amp;lt;Directory /data/web/&amp;gt; #网站存放路径 DirectoryIndex index.</description>
     </item>
     
     <item>

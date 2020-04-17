@@ -145,7 +145,7 @@
 
 <p>在/etc/apache2/ssl/a1 目录下放置 a1网站的ssl证书文件
   a1.conf的内容如下
-&lt;VirtualHost *:80&gt; ServerName a1.com # a1的域名 ServerAlias www.a1.com ServerAdmin admin@gmail.com #管理员邮箱 DocumentRoot /data/web # 网站存放路径 &lt;Directory /data/web&gt; # 网站存放路径 DirectoryIndex index.php Options FollowSymLinks AllowOverride All Require all granted &lt;/Directory&gt; ErrorLog ${APACHE_LOG_DIR}/ee-error.log #错误日志路径 CustomLog ${APACHE_LOG_DIR}/ee-access.log combined #访问日志路径 # ssl配置部分 &lt;/VirtualHost&gt; &lt;IfModule mod_ssl.c&gt; &lt;VirtualHost *:443&gt; ServerAdmin admin@gmail.com ServerName a1.com ServerAlias www.a1.com DocumentRoot /data/web   #网站存放路径 &lt;Directory /data/web/&gt; #网站存放路径 DirectoryIndex index.</p>
+&lt;VirtualHost *:80&gt; ServerName a1.com # a1的域名 ServerAlias www.a1.com ServerAdmin admin@gmail.com #管理员邮箱 DocumentRoot /data/web # 网站存放路径 &lt;Directory /data/web&gt; # 网站存放路径 DirectoryIndex index.php Options FollowSymLinks AllowOverride All Require all granted &lt;/Directory&gt; ErrorLog ${APACHE_LOG_DIR}/a1-error.log #错误日志路径 CustomLog ${APACHE_LOG_DIR}/a1-access.log combined #访问日志路径 # ssl配置部分 &lt;/VirtualHost&gt; &lt;IfModule mod_ssl.c&gt; &lt;VirtualHost *:443&gt; ServerAdmin admin@gmail.com ServerName a1.com ServerAlias www.a1.com DocumentRoot /data/web   #网站存放路径 &lt;Directory /data/web/&gt; #网站存放路径 DirectoryIndex index.</p>
 
           
         
