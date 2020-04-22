@@ -8,10 +8,21 @@
     <language>zh-cn</language>
     <managingEditor>hrbhot@gmail.com (Yin)</managingEditor>
     <webMaster>hrbhot@gmail.com (Yin)</webMaster>
-    <lastBuildDate>Fri, 17 Apr 2020 17:17:13 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 22 Apr 2020 20:56:49 +0200</lastBuildDate>
     
 	<atom:link href="https://hrbhot.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Synology安装aria2</title>
+      <link>https://hrbhot.github.io/posts/synology%E5%AE%89%E8%A3%85aria2/</link>
+      <pubDate>Wed, 22 Apr 2020 20:56:49 +0200</pubDate>
+      <author>hrbhot@gmail.com (Yin)</author>
+      <guid>https://hrbhot.github.io/posts/synology%E5%AE%89%E8%A3%85aria2/</guid>
+      <description>低端的synology没有docker功能真可惜，只能手动安装 aria2
+首先现在 bootstrap ssh 连上synology
+wget http://ipkg.nslu2-linux.org/feeds/optware/cs08q1armel/cross/unstable/syno-mvkw-bootstrap_1.2-7_arm.xsh chmod +x syno-mvkw-bootstrap_1.2-7_arm.xsh sh syno-mvkw-bootstrap_1.2-7_arm.xsh 如果有报错 编辑 bootstrap.sh 找到 #if ! grep Feroceon-KW /proc/cpuinfo &amp;gt;/dev/null 2&amp;gt;&amp;amp;1; then # echo &amp;quot;Error: CPU not Marvell Kirkwood, probably wrong bootstrap.xsh&amp;quot; # exit 3 #fi 在这几行前面加上# 运行脚本 sh bootstrap.sh  安装 aria2 cd /opt/bin ./ipkg update ./ipkg install http://ipkg.nslu2-linux.org/feeds/optware/cs08q1armel/cross/unstable/aria2_1.14.2-1_arm.ipk 如果有报错，删除掉重新来 ./ipkg remove aria2  编辑 aria2.conf 配置文件 mkdir -p /opt/etc/aria2 &amp;amp;&amp;amp; cd /opt/etc/aria2  vim aria2.</description>
+    </item>
     
     <item>
       <title>Elastic_stack_kibana_apache_nginx日志</title>

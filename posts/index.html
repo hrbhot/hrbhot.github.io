@@ -36,7 +36,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://hrbhot.github.io/posts/" />
 
-<meta property="og:updated_time" content="2020-04-17T17:17:13+02:00" />
+<meta property="og:updated_time" content="2020-04-22T20:56:49+02:00" />
 
 
 
@@ -120,6 +120,33 @@
     
     
 
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="https://hrbhot.github.io/posts/synology%E5%AE%89%E8%A3%85aria2/">Synology安装aria2</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2020-04-22
+        </span>
+        
+        
+      </div>
+
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            低端的synology没有docker功能真可惜，只能手动安装 aria2
+首先现在 bootstrap ssh 连上synology
+wget <a href="http://ipkg.nslu2-linux.org/feeds/optware/cs08q1armel/cross/unstable/syno-mvkw-bootstrap_1.2-7_arm.xsh">http://ipkg.nslu2-linux.org/feeds/optware/cs08q1armel/cross/unstable/syno-mvkw-bootstrap_1.2-7_arm.xsh</a> chmod +x syno-mvkw-bootstrap_1.2-7_arm.xsh sh syno-mvkw-bootstrap_1.2-7_arm.xsh 如果有报错 编辑 bootstrap.sh 找到 #if ! grep Feroceon-KW /proc/cpuinfo &gt;/dev/null 2&gt;&amp;1; then # echo &quot;Error: CPU not Marvell Kirkwood, probably wrong bootstrap.xsh&quot; # exit 3 #fi 在这几行前面加上# 运行脚本 sh bootstrap.sh  安装 aria2 cd /opt/bin ./ipkg update ./ipkg install <a href="http://ipkg.nslu2-linux.org/feeds/optware/cs08q1armel/cross/unstable/aria2_1.14.2-1_arm.ipk">http://ipkg.nslu2-linux.org/feeds/optware/cs08q1armel/cross/unstable/aria2_1.14.2-1_arm.ipk</a> 如果有报错，删除掉重新来 ./ipkg remove aria2  编辑 aria2.conf 配置文件 mkdir -p /opt/etc/aria2 &amp;&amp; cd /opt/etc/aria2  vim aria2.
+          
+        
+      </div>
+      <div><a class="read-more button" href="/posts/synology%E5%AE%89%E8%A3%85aria2/">Read more →</a></div>
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="https://hrbhot.github.io/posts/elastic_stack_kibana_apache%E6%97%A5%E5%BF%97/">Elastic_stack_kibana_apache_nginx日志</a></h1>
@@ -352,29 +379,6 @@ global: scrape_interval: 5s scrape_configs: - job_name: &lsquo;prometheus&rsquo;
         
       </div>
       <div><a class="read-more button" href="/posts/portainer/">Read more →</a></div>
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="https://hrbhot.github.io/posts/mac%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%AD%E7%94%A8sublime%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6/">Mac命令行中用sublime打开文件</a></h1>
-      <div class="post-meta">
-        <span class="post-date">
-          2020-03-29
-        </span>
-        
-        
-      </div>
-
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      <div><a class="read-more button" href="/posts/mac%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%AD%E7%94%A8sublime%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6/">Read more →</a></div>
     </div>
     
     <div class="pagination">

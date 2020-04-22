@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>Synology安装aria2 :: Mémo de Yin | 备忘录</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="低端的synology没有docker功能真可惜，只能手动安装 aria2
+首先现在 bootstrap ssh 连上synology
+wget http://ipkg.nslu2-linux.org/feeds/optware/cs08q1armel/cross/unstable/syno-mvkw-bootstrap_1.2-7_arm.xsh chmod &#43;x syno-mvkw-bootstrap_1.2-7_arm.xsh sh syno-mvkw-bootstrap_1.2-7_arm.xsh 如果有报错 编辑 bootstrap.sh 找到 #if ! grep Feroceon-KW /proc/cpuinfo &amp;gt;/dev/null 2&amp;gt;&amp;amp;1; then # echo &amp;quot;Error: CPU not Marvell Kirkwood, probably wrong bootstrap.xsh&amp;quot; # exit 3 #fi 在这几行前面加上# 运行脚本 sh bootstrap.sh  安装 aria2 cd /opt/bin ./ipkg update ./ipkg install http://ipkg.nslu2-linux.org/feeds/optware/cs08q1armel/cross/unstable/aria2_1.14.2-1_arm.ipk 如果有报错，删除掉重新来 ./ipkg remove aria2  编辑 aria2.conf 配置文件 mkdir -p /opt/etc/aria2 &amp;amp;&amp;amp; cd /opt/etc/aria2  vim aria2."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://hrbhot.github.io/posts/synology%E5%AE%89%E8%A3%85aria2/" />
+
+
+
+
+
+<link rel="stylesheet" href="https://hrbhot.github.io/assets/style.css">
+
+
+<link rel="stylesheet" href="https://hrbhot.github.io/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://hrbhot.github.io/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="https://hrbhot.github.io/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Synology安装aria2"/>
+<meta name="twitter:description" content="低端的synology没有docker功能真可惜，只能手动安装 aria2
+首先现在 bootstrap ssh 连上synology
+wget http://ipkg.nslu2-linux.org/feeds/optware/cs08q1armel/cross/unstable/syno-mvkw-bootstrap_1.2-7_arm.xsh chmod &#43;x syno-mvkw-bootstrap_1.2-7_arm.xsh sh syno-mvkw-bootstrap_1.2-7_arm.xsh 如果有报错 编辑 bootstrap.sh 找到 #if ! grep Feroceon-KW /proc/cpuinfo &gt;/dev/null 2&gt;&amp;1; then # echo &quot;Error: CPU not Marvell Kirkwood, probably wrong bootstrap.xsh&quot; # exit 3 #fi 在这几行前面加上# 运行脚本 sh bootstrap.sh  安装 aria2 cd /opt/bin ./ipkg update ./ipkg install http://ipkg.nslu2-linux.org/feeds/optware/cs08q1armel/cross/unstable/aria2_1.14.2-1_arm.ipk 如果有报错，删除掉重新来 ./ipkg remove aria2  编辑 aria2.conf 配置文件 mkdir -p /opt/etc/aria2 &amp;&amp; cd /opt/etc/aria2  vim aria2."/>
+
+
+
+<meta property="og:title" content="Synology安装aria2" />
+<meta property="og:description" content="低端的synology没有docker功能真可惜，只能手动安装 aria2
+首先现在 bootstrap ssh 连上synology
+wget http://ipkg.nslu2-linux.org/feeds/optware/cs08q1armel/cross/unstable/syno-mvkw-bootstrap_1.2-7_arm.xsh chmod &#43;x syno-mvkw-bootstrap_1.2-7_arm.xsh sh syno-mvkw-bootstrap_1.2-7_arm.xsh 如果有报错 编辑 bootstrap.sh 找到 #if ! grep Feroceon-KW /proc/cpuinfo &gt;/dev/null 2&gt;&amp;1; then # echo &quot;Error: CPU not Marvell Kirkwood, probably wrong bootstrap.xsh&quot; # exit 3 #fi 在这几行前面加上# 运行脚本 sh bootstrap.sh  安装 aria2 cd /opt/bin ./ipkg update ./ipkg install http://ipkg.nslu2-linux.org/feeds/optware/cs08q1armel/cross/unstable/aria2_1.14.2-1_arm.ipk 如果有报错，删除掉重新来 ./ipkg remove aria2  编辑 aria2.conf 配置文件 mkdir -p /opt/etc/aria2 &amp;&amp; cd /opt/etc/aria2  vim aria2." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hrbhot.github.io/posts/synology%E5%AE%89%E8%A3%85aria2/" />
+<meta property="article:published_time" content="2020-04-22T20:56:49+02:00" />
+<meta property="article:modified_time" content="2020-04-22T20:56:49+02:00" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 50 50">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">Mémo de Yin | 备忘录</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/">Home</a></li>
+        
+      
+        
+          <li><a href="/posts">Posts</a></li>
+        
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/">Home</a></li>
+      
+    
+      
+        <li><a href="/posts">Posts</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="post">
+    <h2 class="post-title"><a href="https://hrbhot.github.io/posts/synology%E5%AE%89%E8%A3%85aria2/">Synology安装aria2</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            2020-04-22
+        </span>
+      
+      
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      
+
+<p>低端的synology没有docker功能真可惜，只能手动安装 aria2</p>
+
+<h3 id="首先现在-bootstrap">首先现在 bootstrap</h3>
+
+<p>ssh 连上synology</p>
+
+<pre><code>wget http://ipkg.nslu2-linux.org/feeds/optware/cs08q1armel/cross/unstable/syno-mvkw-bootstrap_1.2-7_arm.xsh
+chmod +x syno-mvkw-bootstrap_1.2-7_arm.xsh
+sh syno-mvkw-bootstrap_1.2-7_arm.xsh
+如果有报错 编辑 bootstrap.sh
+
+找到
+#if ! grep Feroceon-KW /proc/cpuinfo &gt;/dev/null 2&gt;&amp;1; then
+# echo &quot;Error: CPU not Marvell Kirkwood, probably wrong bootstrap.xsh&quot;
+# exit 3
+#fi
+在这几行前面加上#
+运行脚本
+sh bootstrap.sh
+</code></pre>
+
+<h3 id="安装-aria2">安装 aria2</h3>
+
+<pre><code>cd /opt/bin
+./ipkg update
+./ipkg install http://ipkg.nslu2-linux.org/feeds/optware/cs08q1armel/cross/unstable/aria2_1.14.2-1_arm.ipk
+如果有报错，删除掉重新来
+./ipkg remove aria2
+
+</code></pre>
+
+<h3 id="编辑-aria2-conf-配置文件">编辑 aria2.conf 配置文件</h3>
+
+<pre><code>mkdir -p /opt/etc/aria2 &amp;&amp; cd /opt/etc/aria2
+</code></pre>
+
+<p>vim aria2.conf
+因为在内网 所以注释掉了rpc-secret=</p>
+
+<pre><code>## '#'开头为注释内容, 选项都有相应的注释说明, 根据需要修改 ##
+## 被注释的选项填写的是默认值, 建议在需要修改时再取消注释  ##
+
+## 文件保存相关 ##
+
+# 文件的保存路径(可使用绝对路径或相对路径), 默认: 当前启动位置
+dir=/usr/local/caddy/www/aria2/Download
+# 启用磁盘缓存, 0为禁用缓存, 需1.16以上版本, 默认:16M
+disk-cache=64M
+# 文件预分配方式, 能有效降低磁盘碎片, 默认:prealloc
+# 预分配所需时间: none &lt; falloc ? trunc &lt; prealloc
+# falloc和trunc则需要文件系统和内核支持
+# NTFS建议使用falloc, EXT3/4建议trunc, MAC 下需要注释此项
+# file-allocation=none
+# 断点续传
+continue=true
+
+## 下载连接相关 ##
+
+# 最大同时下载任务数, 运行时可修改, 默认:5
+max-concurrent-downloads=10
+# 同一服务器连接数, 添加时可指定, 默认:1
+max-connection-per-server=5
+# 最小文件分片大小, 添加时可指定, 取值范围1M -1024M, 默认:20M
+# 假定size=10M, 文件为20MiB 则使用两个来源下载; 文件为15MiB 则使用一个来源下载
+min-split-size=10M
+# 单个任务最大线程数, 添加时可指定, 默认:5
+split=20
+# 整体下载速度限制, 运行时可修改, 默认:0
+#max-overall-download-limit=0
+# 单个任务下载速度限制, 默认:0
+#max-download-limit=0
+# 整体上传速度限制, 运行时可修改, 默认:0
+max-overall-upload-limit=1M
+# 单个任务上传速度限制, 默认:0
+#max-upload-limit=1000
+# 禁用IPv6, 默认:false
+disable-ipv6=false
+
+## 进度保存相关 ##
+
+# 从会话文件中读取下载任务
+input-file=/opt/etc/aria2/aria2.session
+# 在Aria2退出时保存`错误/未完成`的下载任务到会话文件
+save-session=/opt/etc/aria2/aria2.session
+# 定时保存会话, 0为退出时才保存, 需1.16.1以上版本, 默认:0
+save-session-interval=60
+
+## RPC相关设置 ##
+
+# 启用RPC, 默认:false
+enable-rpc=true
+# 允许所有来源, 默认:false
+rpc-allow-origin-all=true
+# 允许非外部访问, 默认:false
+rpc-listen-all=true
+# 事件轮询方式, 取值:[epoll, kqueue, port, poll, select], 不同系统默认值不同
+#event-poll=select
+# RPC监听端口, 端口被占用时可以修改, 默认:6800
+rpc-listen-port=6800
+# 设置的RPC授权令牌, v1.18.4新增功能, 取代 --rpc-user 和 --rpc-passwd 选项
+# rpc-secret=DOUBIToyo
+# 设置的RPC访问用户名, 此选项新版已废弃, 建议改用 --rpc-secret 选项
+#rpc-user=&lt;USER&gt;
+# 设置的RPC访问密码, 此选项新版已废弃, 建议改用 --rpc-secret 选项
+#rpc-passwd=&lt;PASSWD&gt;
+# 是否启用 RPC 服务的 SSL/TLS 加密,
+# 启用加密后 RPC 服务需要使用 https 或者 wss 协议连接
+#rpc-secure=true
+# 在 RPC 服务中启用 SSL/TLS 加密时的证书文件(.pem/.crt)
+#rpc-certificate=/root/xxx.pem
+# 在 RPC 服务中启用 SSL/TLS 加密时的私钥文件(.key)
+#rpc-private-key=/root/xxx.key
+
+## BT/PT下载相关 ##
+
+# 当下载的是一个种子(以.torrent结尾)时, 自动开始BT任务, 默认:true
+follow-torrent=true
+# BT监听端口, 当端口被屏蔽时使用, 默认:6881-6999
+listen-port=51413
+# 单个种子最大连接数, 默认:55
+#bt-max-peers=55
+# 打开DHT功能, PT需要禁用, 默认:true
+enable-dht=true
+# 打开IPv6 DHT功能, PT需要禁用
+#enable-dht6=false
+# DHT网络监听端口, 默认:6881-6999
+#dht-listen-port=6881-6999
+# 本地节点查找, PT需要禁用, 默认:false
+#bt-enable-lpd=true
+# 种子交换, PT需要禁用, 默认:true
+enable-peer-exchange=true
+# 每个种子限速, 对少种的PT很有用, 默认:50K
+#bt-request-peer-speed-limit=50K
+# 客户端伪装, PT需要
+peer-id-prefix=-TR2770-
+user-agent=Transmission/2.77
+# 当种子的分享率达到这个数时, 自动停止做种, 0为一直做种, 默认:1.0
+seed-ratio=0.1
+# 强制保存会话, 即使任务已经完成, 默认:false
+# 较新的版本开启后会在任务完成后依然保留.aria2文件
+force-save=true
+# BT校验相关, 默认:true
+#bt-hash-check-seed=true
+# 继续之前的BT任务时, 无需再次校验, 默认:false
+bt-seed-unverified=true
+# 保存磁力链接元数据为种子文件(.torrent文件), 默认:false
+#bt-save-metadata=true
+</code></pre>
+
+<h3 id="设置aria2-session-用于存放下载任务-这样重启aria2也不会丢失任务了">设置aria2.session 用于存放下载任务，这样重启Aria2也不会丢失任务了</h3>
+
+<pre><code>touch /opt/etc/aria2.session
+chmod 777 /opt/etc/aria2.session
+</code></pre>
+
+<h3 id="开机启动文件">开机启动文件</h3>
+
+<p>vim aria2.sh</p>
+
+<pre><code>#!/bin/sh
+#
+# Put this file in /usr/local/etc/rc.d/aria2.sh
+ 
+case &quot;$1&quot; in
+ 
+stop)
+    echo &quot;Stop Aria2...&quot;
+    kill &quot;`pidof aria2c`&quot;
+    kill &quot;`pidof aria2c`&quot;
+    ;;
+start)
+    /opt/bin/aria2c --conf-path=/opt/etc/aria2/aria2.conf -D
+    ;;
+restart)
+    $0 stop
+    sleep 1
+    $0 start
+    ;;  
+status)
+    ps | grep aria2c | grep -v grep
+    return $?
+    ;;
+*)
+    echo &quot;usage: $0 { start | stop | restart | status}&quot; &gt;&amp;2
+        exit 1
+        ;;
+esac
+</code></pre>
+
+<p>mv aria2.sh /usr/local/etc/rc.d/</p>
+
+<h3 id="客户端配置">客户端配置</h3>
+
+<p>去 <a href="https://github.com/mayswind/AriaNg/releases下载一个AllinOne">https://github.com/mayswind/AriaNg/releases下载一个AllinOne</a></p>
+
+<p>打开网页 在aria2设置里面 添加synology的地址 如果 最下方 提示 aria2状态 已连接，成功安装。</p>
+
+    </div>
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h">Read other posts</span>
+          <hr />
+        </div>
+        <div class="pagination__buttons">
+          
+          
+            <span class="button next">
+              <a href="https://hrbhot.github.io/posts/elastic_stack_kibana_apache%E6%97%A5%E5%BF%97/">
+                <span class="button__text">Elastic_stack_kibana_apache_nginx日志</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 50 50">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">Mémo de Yin | 备忘录</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2020 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="https://hrbhot.github.io/assets/main.js"></script>
+<script src="https://hrbhot.github.io/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>
