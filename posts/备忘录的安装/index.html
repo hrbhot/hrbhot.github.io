@@ -5,6 +5,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c">
 <meta itemprop="name" content="备忘录的安装记录">
 <meta itemprop="description" content=" 1. 安装go hugo git clone https://github.com/gohugoio/hugo.git cd hugo go install  2. 设置主题 git submodule add https://github.com/panr/hugo-theme-hello-friend.git themes/hello echo &#39;theme = &quot;hello&quot;&#39; &gt;&gt; config.toml  3. 发布文章 hugo new posts/my-first-post.md  4. 启动预览 hugo server hugo server -D # 草稿 draft 为true的文章  5. 部署项目 上传public内的文件到hrbhot.github.io项目 cd public git init git add . git commit -m &#39;for init blog&#39; git remote add origin git@github.com:hrbhot/hrbhot.github.io.git #替换成自己的git name git push -u origin master  ">
 
@@ -48,8 +50,8 @@
 				</div>
 				<nav class="site-nav hide-in-mobile">
 					
-				<a href="https://hrbhot.github.io/">Home</a>
-				<a href="https://hrbhot.github.io/posts">Posts</a>
+				<a href="https://hrbhot.github.io/posts">文章</a>
+				<a href="https://hrbhot.github.io">About</a>
 
 				</nav>
 			</div>
@@ -60,8 +62,8 @@
 	</header>
 	<div id="mobile-menu" class="animated fast">
 		<ul>
-			<li><a href="https://hrbhot.github.io/">Home</a></li>
-			<li><a href="https://hrbhot.github.io/posts">Posts</a></li>
+			<li><a href="https://hrbhot.github.io/posts">文章</a></li>
+			<li><a href="https://hrbhot.github.io">About</a></li>
 		</ul>
 	</div>
 
