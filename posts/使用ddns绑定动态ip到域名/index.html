@@ -1,41 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    
-      <title>使用ddns把动态ip绑定到域名 :: Mémo de Yin | 备忘录</title>
-    
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="公司的box是orange business，竟然不是固定ip。最近折腾内网的nas因为这个事情折腾了2天。 方案是用 ddns https://github.com/NewFuture/DDNS
- 申请腾讯的DNSPOD，把域名添加到里面，然后到现有到域名商那里自定义dns添加f1g1ns1.dnspod.net， f1g1ns2.dnspod.net 。
- 在DNSPOD密钥管理里面，添加API ，记住ID和TOKEN字段。
- 用pip 安装 ddns
-pip install ddns  编辑config.json文件 id -&amp;gt; DNSPOD API id, ipv4 -&amp;gt; 修改为自己的域名 index4 -&amp;gt; &amp;ldquo;public&amp;rdquo; ipv6 -&amp;gt; 清空变成 [] tokend -&amp;gt; DNSPOD API token
- 执行ddns 命令,提示域名已经指向了当前的动态ip地址。这是在DNSPOD的控制台也可以看到这时候IP已经变成了box的动态ip。
- 定时任务，需要把github clone到本地,给task.sh和run.py加权限运行。
-运行 cat /etc/cron.d/ddns  任务已经添加到了cron
-  "/>
-<meta name="keywords" content=""/>
-<meta name="robots" content="noodp"/>
-<link rel="canonical" href="https://hrbhot.github.io/posts/%E4%BD%BF%E7%94%A8ddns%E7%BB%91%E5%AE%9A%E5%8A%A8%E6%80%81ip%E5%88%B0%E5%9F%9F%E5%90%8D/" />
+<html lang="zh-cn">
 
-
-
-
-
-<link rel="stylesheet" href="https://hrbhot.github.io/assets/style.css">
-
-
-<link rel="stylesheet" href="https://hrbhot.github.io/style.css">
-
-
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://hrbhot.github.io/img/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="https://hrbhot.github.io/img/favicon.png">
-
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="使用ddns把动态ip绑定到域名"/>
-<meta name="twitter:description" content="公司的box是orange business，竟然不是固定ip。最近折腾内网的nas因为这个事情折腾了2天。 方案是用 ddns https://github.com/NewFuture/DDNS
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta itemprop="name" content="使用ddns把动态ip绑定到域名">
+<meta itemprop="description" content="公司的box是orange business，竟然不是固定ip。最近折腾内网的nas因为这个事情折腾了2天。 方案是用 ddns https://github.com/NewFuture/DDNS
  申请腾讯的DNSPOD，把域名添加到里面，然后到现有到域名商那里自定义dns添加f1g1ns1.dnspod.net， f1g1ns2.dnspod.net 。
  在DNSPOD密钥管理里面，添加API ，记住ID和TOKEN字段。
  用pip 安装 ddns
@@ -43,10 +14,16 @@ pip install ddns  编辑config.json文件 id -&gt; DNSPOD API id, ipv4 -&gt; 修
  执行ddns 命令,提示域名已经指向了当前的动态ip地址。这是在DNSPOD的控制台也可以看到这时候IP已经变成了box的动态ip。
  定时任务，需要把github clone到本地,给task.sh和run.py加权限运行。
 运行 cat /etc/cron.d/ddns  任务已经添加到了cron
-  "/>
+  ">
+
+
+<meta itemprop="datePublished" content="2019-10-27T17:34:25&#43;01:00" />
+<meta itemprop="dateModified" content="2019-10-27T17:34:25&#43;01:00" />
+<meta itemprop="wordCount" content="45">
 
 
 
+<meta itemprop="keywords" content="" />
 <meta property="og:title" content="使用ddns把动态ip绑定到域名" />
 <meta property="og:description" content="公司的box是orange business，竟然不是固定ip。最近折腾内网的nas因为这个事情折腾了2天。 方案是用 ddns https://github.com/NewFuture/DDNS
  申请腾讯的DNSPOD，把域名添加到里面，然后到现有到域名商那里自定义dns添加f1g1ns1.dnspod.net， f1g1ns2.dnspod.net 。
@@ -61,98 +38,66 @@ pip install ddns  编辑config.json文件 id -&gt; DNSPOD API id, ipv4 -&gt; 修
 <meta property="og:url" content="https://hrbhot.github.io/posts/%E4%BD%BF%E7%94%A8ddns%E7%BB%91%E5%AE%9A%E5%8A%A8%E6%80%81ip%E5%88%B0%E5%9F%9F%E5%90%8D/" />
 <meta property="article:published_time" content="2019-10-27T17:34:25+01:00" />
 <meta property="article:modified_time" content="2019-10-27T17:34:25+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用ddns把动态ip绑定到域名"/>
+<meta name="twitter:description" content="公司的box是orange business，竟然不是固定ip。最近折腾内网的nas因为这个事情折腾了2天。 方案是用 ddns https://github.com/NewFuture/DDNS
+ 申请腾讯的DNSPOD，把域名添加到里面，然后到现有到域名商那里自定义dns添加f1g1ns1.dnspod.net， f1g1ns2.dnspod.net 。
+ 在DNSPOD密钥管理里面，添加API ，记住ID和TOKEN字段。
+ 用pip 安装 ddns
+pip install ddns  编辑config.json文件 id -&gt; DNSPOD API id, ipv4 -&gt; 修改为自己的域名 index4 -&gt; &ldquo;public&rdquo; ipv6 -&gt; 清空变成 [] tokend -&gt; DNSPOD API token
+ 执行ddns 命令,提示域名已经指向了当前的动态ip地址。这是在DNSPOD的控制台也可以看到这时候IP已经变成了box的动态ip。
+ 定时任务，需要把github clone到本地,给task.sh和run.py加权限运行。
+运行 cat /etc/cron.d/ddns  任务已经添加到了cron
+  "/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>使用ddns把动态ip绑定到域名</title>
+	<link rel="stylesheet" href="https://hrbhot.github.io/css/style.min.657bcb7af31123e4156b1a3d2ff60a636717e54ead74f882136b5114cf72b55e.css" integrity="sha256-ZXvLevMRI+QVaxo9L/YKY2cX5U6tdPiCE2tRFM9ytV4=" crossorigin="anonymous">
+	
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://hrbhot.github.io">Mémo de Yin | 备忘录</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					
+				<a href="https://hrbhot.github.io/">Home</a>
+				<a href="https://hrbhot.github.io/posts">Posts</a>
+
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://hrbhot.github.io/">Home</a></li>
+			<li><a href="https://hrbhot.github.io/posts">Posts</a></li>
+		</ul>
+	</div>
 
 
-
-
-
-
-  </head>
-  <body class="dark-theme">
-    <div class="container">
-      <header class="header">
-  <span class="header__inner">
-    <a href="/" class="logo" style="text-decoration: none;">
-  
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 50 50">
-  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
-</svg>
-</span>
-    <span class="logo__text">Mémo de Yin | 备忘录</span>
-    <span class="logo__cursor"></span>
-  
-</a>
-
-    <span class="header__right">
-      
-        <nav class="menu">
-  <ul class="menu__inner menu__inner--desktop">
-    
-      
-        
-          <li><a href="/">Home</a></li>
-        
-      
-        
-          <li><a href="/posts">Posts</a></li>
-        
-      
-    
-  </ul>
-
-  <ul class="menu__inner menu__inner--mobile">
-    
-      
-        <li><a href="/">Home</a></li>
-      
-    
-      
-        <li><a href="/posts">Posts</a></li>
-      
-    
-  </ul>
-</nav>
-
-        <span class="menu-trigger">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M0 0h24v24H0z" fill="none"/>
-            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-          </svg>
-        </span>
-      
-      <span class="theme-toggle">
-        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
-  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
-  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
-</svg>
-
-      </span>
-    </span>
-  </span>
-</header>
-
-
-      <div class="content">
-        
-  <div class="post">
-    <h2 class="post-title"><a href="https://hrbhot.github.io/posts/%E4%BD%BF%E7%94%A8ddns%E7%BB%91%E5%AE%9A%E5%8A%A8%E6%80%81ip%E5%88%B0%E5%9F%9F%E5%90%8D/">使用ddns把动态ip绑定到域名</a></h2>
-    <div class="post-meta">
-      
-        <span class="post-date">
-            2019-10-27
-        </span>
-      
-      
-      
-    </div>
-
-    
-
-    
-
-    <div class="post-content">
-      <p>公司的box是orange business，竟然不是固定ip。最近折腾内网的nas因为这个事情折腾了2天。
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Oct 27, 2019</span></div>
+				<h1>使用ddns把动态ip绑定到域名</h1>
+			</header>
+			<div class="content">
+				<p>公司的box是orange business，竟然不是固定ip。最近折腾内网的nas因为这个事情折腾了2天。
 方案是用 ddns <a href="https://github.com/NewFuture/DDNS">https://github.com/NewFuture/DDNS</a></p>
 
 <ol>
@@ -182,70 +127,37 @@ tokend -&gt; DNSPOD API token</p></li>
 <p>任务已经添加到了cron</p></li>
 </ol>
 
-    </div>
-    
-      <div class="pagination">
-        <div class="pagination__title">
-          <span class="pagination__title-h">Read other posts</span>
-          <hr />
-        </div>
-        <div class="pagination__buttons">
-          
-            <span class="button previous">
-              <a href="https://hrbhot.github.io/posts/nextcloud/">
-                <span class="button__icon">←</span>
-                <span class="button__text">Nextcloud</span>
-              </a>
-            </span>
-          
-          
-            <span class="button next">
-              <a href="https://hrbhot.github.io/posts/centos/">
-                <span class="button__text">Centos安装docker的错误解决</span>
-                <span class="button__icon">→</span>
-              </a>
-            </span>
-          
-        </div>
-      </div>
-    
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>45 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-10-27 17:34 &#43;0100</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="next-post" href="https://hrbhot.github.io/posts/nextcloud/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>Nextcloud</span>
+			</a>
+			<a class="prev-post" href="https://hrbhot.github.io/posts/centos/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>Centos安装docker的错误解决</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
 
-    
-
-    </div>
-
-      </div>
-
-      
-        <footer class="footer">
-  <div class="footer__inner">
-    
-      <a href="/" class="logo" style="text-decoration: none;">
-  
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 50 50">
-  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
-</svg>
-</span>
-    <span class="logo__text">Mémo de Yin | 备忘录</span>
-    <span class="logo__cursor"></span>
-  
-</a>
-
-      <div class="copyright">
-        <span>© 2020 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
-        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
-      </div>
-    
-  </div>
-</footer>
-
-<script src="https://hrbhot.github.io/assets/main.js"></script>
-<script src="https://hrbhot.github.io/assets/prism.js"></script>
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2020 <a href="https://hrbhot.github.io">Yin</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://hrbhot.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
 
 
-      
-    </div>
 
-    
-  </body>
+	<script src="https://hrbhot.github.io/js/bundle.min.4a9a0ac3d2217822c7865b4161e6c2a71de1d70492264337755427898dd718f6.js" integrity="sha256-SpoKw9IheCLHhltBYebCpx3h1wSSJkM3dVQniY3XGPY=" crossorigin="anonymous"></script>
+	
+
+</body>
+
 </html>
