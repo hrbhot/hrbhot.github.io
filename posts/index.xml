@@ -212,7 +212,7 @@ esac
 
 <h3 id="客户端配置">客户端配置</h3>
 
-<p>去 <a href="https://github.com/mayswind/AriaNg/releases下载一个AllinOne">https://github.com/mayswind/AriaNg/releases下载一个AllinOne</a></p>
+<p>去 <a href="https://github.com/mayswind/AriaNg/releases">https://github.com/mayswind/AriaNg/releases</a>  下载一个AllinOne</p>
 
 <p>打开网页 在aria2设置里面 添加synology的地址 如果 最下方 提示 aria2状态 已连接，成功安装。</p>
 ]]></content>
