@@ -325,7 +325,7 @@ docker run --link es-master:elasticsearch -p 5601:5601 --name kibana -d kibana:6
 
 <h3 id="docker-compose-yml-版本">docker-compose.yml 版本</h3>
 
-<p>version: &lsquo;2.2&rsquo;
+<pre><code>version: '2.2'
 services:
   es01:
     image: elasticsearch:7.5.1
@@ -336,7 +336,7 @@ services:
       - discovery.seed_hosts=es02
       - cluster.initial_master_nodes=es01,es02
       - bootstrap.memory_lock=true
-      - &ldquo;ES_JAVA_OPTS=-Xms512m -Xmx512m&rdquo;
+      - &quot;ES_JAVA_OPTS=-Xms512m -Xmx512m&quot;
     ulimits:
       memlock:
         soft: -1
@@ -356,7 +356,7 @@ services:
       - discovery.seed_hosts=es01
       - cluster.initial_master_nodes=es01,es02
       - bootstrap.memory_lock=true
-      - &ldquo;ES_JAVA_OPTS=-Xms512m -Xmx512m&rdquo;
+      - &quot;ES_JAVA_OPTS=-Xms512m -Xmx512m&quot;
     ulimits:
       memlock:
         soft: -1
@@ -370,7 +370,7 @@ services:
     container_name: kibana
     restart: always
     ports:
-      - &ldquo;5601:5601&rdquo;
+      - &quot;5601:5601&quot;
     environment:
       I18N_LOCALE: zh-CN #汉化
     networks:
@@ -384,7 +384,9 @@ volumes:
     driver: local
 networks:
   elastic:
-    driver: bridge</p>
+    driver: bridge
+
+</code></pre>
 
 <hr />
 
