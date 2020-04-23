@@ -5,8 +5,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta name="theme-color" content="#494f5c">
-	<meta name="msapplication-TileColor" content="#494f5c">
+	<meta name="theme-color" content="#fcfcfc">
+	<meta name="msapplication-TileColor" content="#fcfcfc">
 <meta itemprop="name" content="Elastic_stack_kibana_apache_nginx日志">
 <meta itemprop="description" content="配置 Elastic和kibana监控apache/nginx 日志
 elastic 监控 apache 日志  elastic stack # 开源日志平台 由elasticsearch ,logstash，kibana，beats四个组件组成 kibana # 前端web展示日志分析和内容 kafka # 消息队列 filebeat # 将系统日志可视化，把数据发送给 logstash和elasticsearch logstash # 收集分析存储工具 elasticsearch # 搜索分析存储的数据,基于JSON分布式搜索  拉es镜像 docker pull elasticsearch:6.7.0  创建es配置文件和挂载目录 cd / mkdir -p mnt/elasticsearch cd mnt/elasticsearch mkdir config mkdir matser mkdir slave chmod 777 master chmod 777 slave  调高jvm线程 vim /etc/sysctl.conf # 添加这个 vm.max_map_count=262144 # 保存后执行这个命令 sysctl -p  matser.yml cluster.">
@@ -52,6 +52,7 @@ elastic 监控 apache 日志  elastic stack # 开源日志平台 由elasticsearc
 					<a href="https://hrbhot.github.io">Mémo de Yin </a>
 				</div>
 				<nav class="site-nav hide-in-mobile">
+					<a href="https://hrbhot.github.io/">Home</a>
 					<a href="https://hrbhot.github.io/posts/">文章</a>
 					<a href="https://hrbhot.github.io">About</a>
 				</nav>
@@ -63,6 +64,7 @@ elastic 监控 apache 日志  elastic stack # 开源日志平台 由elasticsearc
 	</header>
 	<div id="mobile-menu" class="animated fast">
 		<ul>
+			<li><a href="https://hrbhot.github.io/">Home</a></li>
 			<li><a href="https://hrbhot.github.io/posts/">文章</a></li>
 			<li><a href="https://hrbhot.github.io">About</a></li>
 		</ul>
@@ -337,7 +339,7 @@ host: &quot;&lt;kibana_url&gt;&quot;
 	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
 		<p>&copy; 2020 <a href="https://hrbhot.github.io">Yin</a></p>
 		<p>
-			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://hrbhot.github.io/post/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://hrbhot.github.io/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
 		</p>
 	</footer>
 

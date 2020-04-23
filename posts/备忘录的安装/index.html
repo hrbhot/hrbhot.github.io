@@ -5,8 +5,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta name="theme-color" content="#494f5c">
-	<meta name="msapplication-TileColor" content="#494f5c">
+	<meta name="theme-color" content="#fcfcfc">
+	<meta name="msapplication-TileColor" content="#fcfcfc">
 <meta itemprop="name" content="备忘录的安装记录">
 <meta itemprop="description" content=" 1. 安装go hugo git clone https://github.com/gohugoio/hugo.git cd hugo go install  2. 设置主题 git submodule add https://github.com/panr/hugo-theme-hello-friend.git themes/hello echo &#39;theme = &quot;hello&quot;&#39; &gt;&gt; config.toml  3. 发布文章 hugo new posts/my-first-post.md  4. 启动预览 hugo server hugo server -D # 草稿 draft 为true的文章  5. 部署项目 上传public内的文件到hrbhot.github.io项目 cd public git init git add . git commit -m &#39;for init blog&#39; git remote add origin git@github.com:hrbhot/hrbhot.github.io.git #替换成自己的git name git push -u origin master  ">
 
@@ -49,6 +49,7 @@
 					<a href="https://hrbhot.github.io">Mémo de Yin </a>
 				</div>
 				<nav class="site-nav hide-in-mobile">
+					<a href="https://hrbhot.github.io/">Home</a>
 					<a href="https://hrbhot.github.io/posts/">文章</a>
 					<a href="https://hrbhot.github.io">About</a>
 				</nav>
@@ -60,6 +61,7 @@
 	</header>
 	<div id="mobile-menu" class="animated fast">
 		<ul>
+			<li><a href="https://hrbhot.github.io/">Home</a></li>
 			<li><a href="https://hrbhot.github.io/posts/">文章</a></li>
 			<li><a href="https://hrbhot.github.io">About</a></li>
 		</ul>
@@ -130,7 +132,7 @@ git push -u origin master
 	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
 		<p>&copy; 2020 <a href="https://hrbhot.github.io">Yin</a></p>
 		<p>
-			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://hrbhot.github.io/post/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://hrbhot.github.io/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
 		</p>
 	</footer>
 
