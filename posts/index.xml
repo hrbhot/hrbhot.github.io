@@ -5,8 +5,53 @@
 		<description>Recent content in Posts on Mémo de Yin </description>
 		<generator>Hugo -- gohugo.io</generator>
 		<language>zh-hans</language>
-		<lastBuildDate>Wed, 22 Apr 2020 20:56:49 +0200</lastBuildDate>
+		<lastBuildDate>Fri, 24 Apr 2020 21:45:13 +0200</lastBuildDate>
 		<atom:link href="https://hrbhot.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Ssh_sftp访问权限</title>
+			<link>https://hrbhot.github.io/posts/ssh_sftp%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90/</link>
+			<pubDate>Fri, 24 Apr 2020 21:45:13 +0200</pubDate>
+			
+			<guid>https://hrbhot.github.io/posts/ssh_sftp%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90/</guid>
+			<description>限制用户连接sftp只能访问指定的目录
+ 新建用户,修改密码
+useradd ftpuser passwd ftpuser  设置 ssh ，注意 /data/ftp的上级目录的权限是管理员。 如果设置 ChrootDirectory %h 则为用户主目录
+cd /etc/ssh cp sshd_config{,.bak} vim sshd_config #编辑 #Subsystem sftp /usr/lib/openssh/sftp-server Subsystem sftp internal-sftp Match User ftpuser ChrootDirectory /data/ftp X11Forwarding no AllowTcpForwarding no ForceCommand internal-sftp  重启 测试
+service sshd restart   </description>
+			<content type="html"><![CDATA[<p>限制用户连接sftp只能访问指定的目录</p>
+
+<ol>
+<li><p>新建用户,修改密码</p>
+
+<pre><code>useradd ftpuser
+passwd ftpuser
+</code></pre></li>
+
+<li><p>设置 ssh ，注意 /data/ftp的上级目录的权限是管理员。 如果设置 ChrootDirectory %h 则为用户主目录</p>
+
+<pre><code>cd /etc/ssh 
+cp sshd_config{,.bak}
+vim sshd_config
+
+#编辑 
+#Subsystem      sftp    /usr/lib/openssh/sftp-server
+Subsystem sftp internal-sftp
+Match User ftpuser
+ChrootDirectory /data/ftp
+X11Forwarding no
+AllowTcpForwarding no
+ForceCommand internal-sftp
+
+</code></pre></li>
+
+<li><p>重启 测试</p>
+
+<pre><code>service sshd restart
+</code></pre></li>
+</ol>
+]]></content>
+		</item>
 		
 		<item>
 			<title>Synology安装aria2</title>
