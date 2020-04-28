@@ -14,12 +14,12 @@
 			<pubDate>Tue, 28 Apr 2020 12:59:34 +0200</pubDate>
 			
 			<guid>https://hrbhot.github.io/posts/%E7%BB%99tar%E5%8E%8B%E7%BC%A9%E5%A2%9E%E5%8A%A0%E8%BF%9B%E5%BA%A6%E6%9D%A1/</guid>
-			<description> 有点花里胡哨，在生产环境中还是建议使用 tar zxcf 这样简单的参数少的命令减少错误产生。
+			<description> 有点花里胡哨，在生产环境中还是建议使用 tar zcvf 这样简单的参数少的命令减少错误产生。
 用pv 和du 显示进度条 需要先安装 pv工具，如ubuntu apt install pv 利用du先获得文件或目录大小，然后输出给 pv显示。
 tar -cf - “要压缩的文件或者目录路径”| pv -s $(($(du -sk “要压缩的文件或者目录路径” | awk &#39;{print $1}&#39;) * 1024)) | gzip &amp;gt; {输出的文件名}.tar.gz  </description>
 			<content type="html"><![CDATA[
 
-<p>有点花里胡哨，在生产环境中还是建议使用 tar zxcf 这样简单的参数少的命令减少错误产生。</p>
+<p>有点花里胡哨，在生产环境中还是建议使用 tar zcvf 这样简单的参数少的命令减少错误产生。</p>
 
 <h3 id="用pv-和du-显示进度条">用pv 和du 显示进度条</h3>
 

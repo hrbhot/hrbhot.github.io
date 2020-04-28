@@ -8,7 +8,7 @@
 	<meta name="theme-color" content="#fcfcfc">
 	<meta name="msapplication-TileColor" content="#fcfcfc">
 <meta itemprop="name" content="给tar压缩增加进度条">
-<meta itemprop="description" content=" 有点花里胡哨，在生产环境中还是建议使用 tar zxcf 这样简单的参数少的命令减少错误产生。
+<meta itemprop="description" content=" 有点花里胡哨，在生产环境中还是建议使用 tar zcvf 这样简单的参数少的命令减少错误产生。
 用pv 和du 显示进度条 需要先安装 pv工具，如ubuntu apt install pv 利用du先获得文件或目录大小，然后输出给 pv显示。
 tar -cf - “要压缩的文件或者目录路径”| pv -s $(($(du -sk “要压缩的文件或者目录路径” | awk &#39;{print $1}&#39;) * 1024)) | gzip &gt; {输出的文件名}.tar.gz  ">
 
@@ -21,7 +21,7 @@ tar -cf - “要压缩的文件或者目录路径”| pv -s $(($(du -sk “要�
 
 <meta itemprop="keywords" content="linux,tar," />
 <meta property="og:title" content="给tar压缩增加进度条" />
-<meta property="og:description" content=" 有点花里胡哨，在生产环境中还是建议使用 tar zxcf 这样简单的参数少的命令减少错误产生。
+<meta property="og:description" content=" 有点花里胡哨，在生产环境中还是建议使用 tar zcvf 这样简单的参数少的命令减少错误产生。
 用pv 和du 显示进度条 需要先安装 pv工具，如ubuntu apt install pv 利用du先获得文件或目录大小，然后输出给 pv显示。
 tar -cf - “要压缩的文件或者目录路径”| pv -s $(($(du -sk “要压缩的文件或者目录路径” | awk &#39;{print $1}&#39;) * 1024)) | gzip &gt; {输出的文件名}.tar.gz  " />
 <meta property="og:type" content="article" />
@@ -30,7 +30,7 @@ tar -cf - “要压缩的文件或者目录路径”| pv -s $(($(du -sk “要�
 <meta property="article:modified_time" content="2020-04-28T12:59:34+02:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="给tar压缩增加进度条"/>
-<meta name="twitter:description" content=" 有点花里胡哨，在生产环境中还是建议使用 tar zxcf 这样简单的参数少的命令减少错误产生。
+<meta name="twitter:description" content=" 有点花里胡哨，在生产环境中还是建议使用 tar zcvf 这样简单的参数少的命令减少错误产生。
 用pv 和du 显示进度条 需要先安装 pv工具，如ubuntu apt install pv 利用du先获得文件或目录大小，然后输出给 pv显示。
 tar -cf - “要压缩的文件或者目录路径”| pv -s $(($(du -sk “要压缩的文件或者目录路径” | awk &#39;{print $1}&#39;) * 1024)) | gzip &gt; {输出的文件名}.tar.gz  "/>
 
@@ -81,7 +81,7 @@ tar -cf - “要压缩的文件或者目录路径”| pv -s $(($(du -sk “要�
 			<div class="content">
 				
 
-<p>有点花里胡哨，在生产环境中还是建议使用 tar zxcf 这样简单的参数少的命令减少错误产生。</p>
+<p>有点花里胡哨，在生产环境中还是建议使用 tar zcvf 这样简单的参数少的命令减少错误产生。</p>
 
 <h3 id="用pv-和du-显示进度条">用pv 和du 显示进度条<a href="#用pv-和du-显示进度条" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 
