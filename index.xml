@@ -6,10 +6,21 @@
     <description>Recent content on Mémo de Yin </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hans</language>
-    <lastBuildDate>Fri, 24 Apr 2020 21:45:13 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 28 Apr 2020 12:59:34 +0200</lastBuildDate>
     
 	<atom:link href="https://hrbhot.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>给tar压缩增加进度条</title>
+      <link>https://hrbhot.github.io/posts/%E7%BB%99tar%E5%8E%8B%E7%BC%A9%E5%A2%9E%E5%8A%A0%E8%BF%9B%E5%BA%A6%E6%9D%A1/</link>
+      <pubDate>Tue, 28 Apr 2020 12:59:34 +0200</pubDate>
+      
+      <guid>https://hrbhot.github.io/posts/%E7%BB%99tar%E5%8E%8B%E7%BC%A9%E5%A2%9E%E5%8A%A0%E8%BF%9B%E5%BA%A6%E6%9D%A1/</guid>
+      <description> 有点花里胡哨，在生产环境中还是建议使用 tar zxcf 这样简单的参数少的命令减少错误产生。
+用pv 和du 显示进度条 需要先安装 pv工具，如ubuntu apt install pv 利用du先获得文件或目录大小，然后输出给 pv显示。
+tar -cf - “要压缩的文件或者目录路径”| pv -s $(($(du -sk “要压缩的文件或者目录路径” | awk &#39;{print $1}&#39;) * 1024)) | gzip &amp;gt; {输出的文件名}.tar.gz  </description>
+    </item>
     
     <item>
       <title>Ssh_sftp访问权限</title>
@@ -117,21 +128,6 @@ apt-get install -q -y ssmtp mailutils / echo &amp;quot;mailhub=smtp.gmail.com:58
       <guid>https://hrbhot.github.io/posts/tar%E5%91%BD%E4%BB%A4%E6%89%93%E5%8C%85%E6%8E%92%E9%99%A4%E6%9F%90%E4%B8%AA%E7%9B%AE%E5%BD%95%E6%88%96%E8%80%85%E6%96%87%E4%BB%B6/</guid>
       <description> 用tar 打包，并排除其中某个目录或者文件。
 要打包test目录的结构 . ├── 1 │ ├── 1.txt │ └── 2.md ├── 2 │ └── 2.txt └── 3  打包排除目录1 tar zcvf test.tar.gz --eclude=test/1 test  打包排除目录1 和目录2 tar zcvf test.tar.gz --exclude=test/1 --exclude=test/2 test  打包排除目录1下面所有txt文件 tar zcvf test.tar.gz --exclude=test/1/*.txt test  </description>
-    </item>
-    
-    <item>
-      <title>Docker搭建Prometheus监控系统</title>
-      <link>https://hrbhot.github.io/posts/docker%E6%90%AD%E5%BB%BAprometheus%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/</link>
-      <pubDate>Tue, 07 Apr 2020 22:51:38 +0200</pubDate>
-      
-      <guid>https://hrbhot.github.io/posts/docker%E6%90%AD%E5%BB%BAprometheus%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/</guid>
-      <description>简述 对比zabbix，个人更喜欢prometheus。简单快捷，zabbix过重。 1. 安装prometheus收集数据和存储时间序列（TSDB） 2. 在目标机器上安装node-exporter提供metrics 数据给prometheus 3. 安装grafana 展示数据
-目录结构 . ├── docker-compose.yml ├── exporter │ ├── node_exporter │ └── up.sh └── prometheus └── prometheus.yml  目标机器安装 Node Exporter 下载
-wget https://github.com/prometheus/node_exporter/releases/download/v0.18.1/node_exporter-0.18.1.linux-amd64.tar.gz tar zxvf *.gz  进入node exporter目录，创建一个启动脚本 &amp;ldquo;up.sh&amp;rdquo; ,开放端口 9101 。
-脚本内容如下
-nohup ./node_exporter --web.listen-address=&amp;quot;:9101&amp;quot; &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 &amp;amp;  启动 Node exporter
-./up.sh  Prometheus 监控配置 编辑 prometheus.yml 文件 放在 prometheus目录下
-global: scrape_interval: 5s scrape_configs: - job_name: &#39;prometheus&#39; static_configs: - targets: [&#39;prometheus:9090&#39;] #同时监控服务本身 - job_name: &#39;linux-exporter&#39; metrics_path: /metrics static_configs: - targets: [&#39;localhost:9101&#39;] #node ip以及端口  Docker安装 Prometheus 和 Grafana docker-compose.</description>
     </item>
     
   </channel>
