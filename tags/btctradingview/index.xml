@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>btc,tradingview on Mémo de Yin </title>
+    <link>https://hrbhot.github.io/tags/btctradingview/</link>
+    <description>Recent content in btc,tradingview on Mémo de Yin </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hans</language>
+    <lastBuildDate>Thu, 30 Apr 2020 11:33:25 +0200</lastBuildDate>
+    
+	<atom:link href="https://hrbhot.github.io/tags/btctradingview/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Tradingview_pine脚本_三条ma</title>
+      <link>https://hrbhot.github.io/posts/tradingview_pine%E8%84%9A%E6%9C%AC_%E4%B8%89%E6%9D%A1ma/</link>
+      <pubDate>Thu, 30 Apr 2020 11:33:25 +0200</pubDate>
+      
+      <guid>https://hrbhot.github.io/posts/tradingview_pine%E8%84%9A%E6%9C%AC_%E4%B8%89%E6%9D%A1ma/</guid>
+      <description>Tradingview 未付费用户有只能用三个指标的限制，如果我想看ma 20，60，120 就把资源都占用了。 利用pine编辑器6行代码节省资源，变成只占用一个指标。
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/ // © hrbhot //@version=4 study(title = &amp;quot;MA 20 &amp;amp; 60 &amp;amp; 120&amp;quot;, overlay = true) short = sma (close,20) //代表MA 20 mid = sma (close,60) //代表MA 60 long = sma (close,120) //代表MA 120 plot(short, color =#FF8C00, linewidth = 3) plot(mid, color =#FF4500, linewidth =3) plot(long, color =#C0C0C0, linewidth = 3)  把代码内 short,mid,long 换成自己需要的周期即可。</description>
+    </item>
+    
+  </channel>
+</rss>
