@@ -6,10 +6,19 @@
     <description>Recent content in Tags on Mémo de Yin </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hans</language>
-    <lastBuildDate>Thu, 30 Apr 2020 11:33:25 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 13 May 2020 14:52:30 +0200</lastBuildDate>
     
 	<atom:link href="https://hrbhot.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ssh,linux</title>
+      <link>https://hrbhot.github.io/tags/sshlinux/</link>
+      <pubDate>Wed, 13 May 2020 14:52:30 +0200</pubDate>
+      
+      <guid>https://hrbhot.github.io/tags/sshlinux/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>btc,tradingview</title>

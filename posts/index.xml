@@ -5,8 +5,59 @@
 		<description>Recent content in Posts on Mémo de Yin </description>
 		<generator>Hugo -- gohugo.io</generator>
 		<language>zh-hans</language>
-		<lastBuildDate>Thu, 30 Apr 2020 11:33:25 +0200</lastBuildDate>
+		<lastBuildDate>Wed, 13 May 2020 14:52:30 +0200</lastBuildDate>
 		<atom:link href="https://hrbhot.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>ITerm2脚本登陆ssh</title>
+			<link>https://hrbhot.github.io/posts/iterm2%E8%84%9A%E6%9C%AC%E7%99%BB%E9%99%86ssh/</link>
+			<pubDate>Wed, 13 May 2020 14:52:30 +0200</pubDate>
+			
+			<guid>https://hrbhot.github.io/posts/iterm2%E8%84%9A%E6%9C%AC%E7%99%BB%E9%99%86ssh/</guid>
+			<description>ITerm2 设置脚本 免输入登陆SSH
+Profiles =&amp;gt; Open profiles =&amp;gt; Edit profiles =&amp;gt; Tags + =&amp;gt; Command位置 =&amp;gt; expect Path/脚本文件名
+带证书 SSH脚本 #!/usr/bin/expect -f set user root #用户名 set host YouHostIP #主机IP set empath YouPATH/host.pem #证书存放位置 set timeout -1 spawn ssh -i $empath $user@$host interact expect eof  免密码 SSH脚本 #!/usr/bin/expect -f set user root #用户名 set host YouHostIP #主机IP set password YouPassword #密码 set timeout -1 spawn ssh $user@$host expect { &amp;quot;(yes/no)?</description>
+			<content type="html"><![CDATA[
+
+<p>ITerm2 设置脚本 免输入登陆SSH</p>
+
+<p>Profiles =&gt; Open profiles =&gt; Edit profiles =&gt; Tags + =&gt; Command位置 =&gt; expect Path/脚本文件名</p>
+
+<h3 id="带证书-ssh脚本">带证书 SSH脚本</h3>
+
+<pre><code>#!/usr/bin/expect -f
+
+set user root  #用户名
+set host YouHostIP  #主机IP 
+set empath YouPATH/host.pem  #证书存放位置
+set timeout -1
+
+spawn ssh -i $empath $user@$host
+interact
+expect eof
+</code></pre>
+
+<h3 id="免密码-ssh脚本">免密码 SSH脚本</h3>
+
+<pre><code>#!/usr/bin/expect -f
+
+set user root #用户名
+set host YouHostIP  #主机IP 
+set password YouPassword #密码
+set timeout -1
+
+spawn ssh $user@$host
+expect {
+        &quot;(yes/no)?&quot;
+        {send &quot;yes\n&quot;;exp_continue}
+        &quot;password:&quot;
+        {send &quot;$password\n&quot;}
+}
+interact
+expect eof
+</code></pre>
+]]></content>
+		</item>
 		
 		<item>
 			<title>Tradingview_pine脚本_三条ma</title>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ssh,linux on Mémo de Yin </title>
+    <link>https://hrbhot.github.io/tags/sshlinux/</link>
+    <description>Recent content in ssh,linux on Mémo de Yin </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hans</language>
+    <lastBuildDate>Wed, 13 May 2020 14:52:30 +0200</lastBuildDate>
+    
+	<atom:link href="https://hrbhot.github.io/tags/sshlinux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ITerm2脚本登陆ssh</title>
+      <link>https://hrbhot.github.io/posts/iterm2%E8%84%9A%E6%9C%AC%E7%99%BB%E9%99%86ssh/</link>
+      <pubDate>Wed, 13 May 2020 14:52:30 +0200</pubDate>
+      
+      <guid>https://hrbhot.github.io/posts/iterm2%E8%84%9A%E6%9C%AC%E7%99%BB%E9%99%86ssh/</guid>
+      <description>ITerm2 设置脚本 免输入登陆SSH
+Profiles =&amp;gt; Open profiles =&amp;gt; Edit profiles =&amp;gt; Tags + =&amp;gt; Command位置 =&amp;gt; expect Path/脚本文件名
+带证书 SSH脚本 #!/usr/bin/expect -f set user root #用户名 set host YouHostIP #主机IP set empath YouPATH/host.pem #证书存放位置 set timeout -1 spawn ssh -i $empath $user@$host interact expect eof  免密码 SSH脚本 #!/usr/bin/expect -f set user root #用户名 set host YouHostIP #主机IP set password YouPassword #密码 set timeout -1 spawn ssh $user@$host expect { &amp;quot;(yes/no)?</description>
+    </item>
+    
+  </channel>
+</rss>
