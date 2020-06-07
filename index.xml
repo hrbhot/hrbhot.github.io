@@ -6,10 +6,28 @@
     <description>Recent content on Mémo de Yin </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hans</language>
-    <lastBuildDate>Wed, 13 May 2020 14:52:30 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 07 Jun 2020 12:28:23 +0200</lastBuildDate>
     
 	<atom:link href="https://hrbhot.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>命令行下载b站视频</title>
+      <link>https://hrbhot.github.io/posts/%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%8B%E8%BD%BDb%E7%AB%99%E8%A7%86%E9%A2%91/</link>
+      <pubDate>Sun, 07 Jun 2020 12:28:23 +0200</pubDate>
+      
+      <guid>https://hrbhot.github.io/posts/%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%8B%E8%BD%BDb%E7%AB%99%E8%A7%86%E9%A2%91/</guid>
+      <description>看b站有时候很卡，使用annie这个工具把视频下载到本地观看，和youtuble-dl差不多。
+ 下载安装包
+wget https://github.com/iawia002/annie/releases/download/0.10.1/annie_0.10.1_Linux_64-bit.tar.gz  或者curl命令 下载
+curl -LO https://github.com/iawia002/annie/releases/download/0.10.1/annie_0.10.1_Linux_64-bit.tar.gz  解压缩,并删除安装文件
+tar zxvf *.gz rm *.gz  运行 下载高清的视频 可以先用 annie -i b站链接地址 ，查看支撑的清晰度，80 是1080P
+  ./annie -f 80 b站链接地址
+如果下载很多视频 可以把视频放在一个link.txt文件中。使用下面命令下载
+./annie -f 80 -F link.txt
+ 如果多视频下载做个简单的后台运行脚本 down_b_video.sh
+nohup ./annie -f 80 -F link.txt &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 &amp;amp;   </description>
+    </item>
     
     <item>
       <title>ITerm2脚本登陆ssh</title>
@@ -116,16 +134,6 @@ ufw status numbered  删除
 ufw delete 序号  只允许指定IP地址访问指定端口
 例如9090端口只允许10.0.2.1访问 来规避prometheus的数据被外部发现
 ufw allow from 10.0.2.1 to any port 9090  </description>
-    </item>
-    
-    <item>
-      <title>Docker安装php extension imagemagick</title>
-      <link>https://hrbhot.github.io/posts/docker%E5%AE%89%E8%A3%85php_extension_imagemagick/</link>
-      <pubDate>Sat, 11 Apr 2020 18:37:48 +0200</pubDate>
-      
-      <guid>https://hrbhot.github.io/posts/docker%E5%AE%89%E8%A3%85php_extension_imagemagick/</guid>
-      <description>进入docker内安装 apt-get update \ &amp;amp;&amp;amp; apt-get install -y libmagickwand-6.q16-dev --no-install-recommends \ &amp;amp;&amp;amp; yes&amp;quot;&amp;quot;|pecl install imagick \ &amp;amp;&amp;amp; echo &amp;quot;extension=imagick.so&amp;quot; &amp;gt; /usr/local/etc/php/conf.d/ext-imagick.ini  yes&amp;rdquo;&amp;rdquo; | 的意思是管道传递一个参数给后面的命令让pecl静默安装。
-上面代码有待优化，上述安装让docker增加了差不多200M。</description>
     </item>
     
   </channel>

@@ -5,8 +5,62 @@
 		<description>Recent content in Posts on Mémo de Yin </description>
 		<generator>Hugo -- gohugo.io</generator>
 		<language>zh-hans</language>
-		<lastBuildDate>Wed, 13 May 2020 14:52:30 +0200</lastBuildDate>
+		<lastBuildDate>Sun, 07 Jun 2020 12:28:23 +0200</lastBuildDate>
 		<atom:link href="https://hrbhot.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>命令行下载b站视频</title>
+			<link>https://hrbhot.github.io/posts/%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%8B%E8%BD%BDb%E7%AB%99%E8%A7%86%E9%A2%91/</link>
+			<pubDate>Sun, 07 Jun 2020 12:28:23 +0200</pubDate>
+			
+			<guid>https://hrbhot.github.io/posts/%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%8B%E8%BD%BDb%E7%AB%99%E8%A7%86%E9%A2%91/</guid>
+			<description>看b站有时候很卡，使用annie这个工具把视频下载到本地观看，和youtuble-dl差不多。
+ 下载安装包
+wget https://github.com/iawia002/annie/releases/download/0.10.1/annie_0.10.1_Linux_64-bit.tar.gz  或者curl命令 下载
+curl -LO https://github.com/iawia002/annie/releases/download/0.10.1/annie_0.10.1_Linux_64-bit.tar.gz  解压缩,并删除安装文件
+tar zxvf *.gz rm *.gz  运行 下载高清的视频 可以先用 annie -i b站链接地址 ，查看支撑的清晰度，80 是1080P
+  ./annie -f 80 b站链接地址
+如果下载很多视频 可以把视频放在一个link.txt文件中。使用下面命令下载
+./annie -f 80 -F link.txt
+ 如果多视频下载做个简单的后台运行脚本 down_b_video.sh
+nohup ./annie -f 80 -F link.txt &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 &amp;amp;   </description>
+			<content type="html"><![CDATA[<p>看b站有时候很卡，使用annie这个工具把视频下载到本地观看，和youtuble-dl差不多。</p>
+
+<ol>
+<li><p>下载安装包</p>
+
+<pre><code>wget https://github.com/iawia002/annie/releases/download/0.10.1/annie_0.10.1_Linux_64-bit.tar.gz
+</code></pre>
+
+<p>或者curl命令 下载</p>
+
+<pre><code>curl -LO https://github.com/iawia002/annie/releases/download/0.10.1/annie_0.10.1_Linux_64-bit.tar.gz
+</code></pre></li>
+
+<li><p>解压缩,并删除安装文件</p>
+
+<pre><code>tar zxvf *.gz
+rm *.gz 
+</code></pre></li>
+
+<li><p>运行 下载高清的视频
+可以先用 annie -i b站链接地址 ，查看支撑的清晰度，80 是1080P</p></li>
+</ol>
+
+<p>./annie -f 80 b站链接地址</p>
+
+<p>如果下载很多视频 可以把视频放在一个link.txt文件中。使用下面命令下载</p>
+
+<p>./annie -f 80 -F link.txt</p>
+
+<ol>
+<li><p>如果多视频下载做个简单的后台运行脚本 down_b_video.sh</p>
+
+<pre><code>nohup ./annie -f 80 -F link.txt &gt;/dev/null 2&gt;&amp;1 &amp;
+</code></pre></li>
+</ol>
+]]></content>
+		</item>
 		
 		<item>
 			<title>ITerm2脚本登陆ssh</title>
