@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>untagged on Mémo de Yin </title>
+    <link>https://hrbhot.github.io/tags/untagged/</link>
+    <description>Recent content in untagged on Mémo de Yin </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hans</language>
+    
+	<atom:link href="https://hrbhot.github.io/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Docker安装RabbitMQ</title>
+      <link>https://hrbhot.github.io/posts/docker%E5%AE%89%E8%A3%85rabbitmq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hrbhot.github.io/posts/docker%E5%AE%89%E8%A3%85rabbitmq/</guid>
+      <description>docker 一键启动
+docker run -d &amp;ndash;restart always &amp;ndash;name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
+端口 5672 为RabbitMQ服务器监听的 TCP 端口
+127.0.0.1:15672 为RabbitMQ管理工具监听的http端口 ，通过这个地址访问管理rabbitMQ 默认用户名 guest 密码 guest</description>
+    </item>
+    
+  </channel>
+</rss>
