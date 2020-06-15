@@ -6,10 +6,22 @@
     <description>Recent content on Mémo de Yin </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hans</language>
-    <lastBuildDate>Sun, 07 Jun 2020 12:28:23 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 10 Jun 2020 00:16:55 +0200</lastBuildDate>
     
 	<atom:link href="https://hrbhot.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Docker安装RabbitMQ</title>
+      <link>https://hrbhot.github.io/posts/docker%E5%AE%89%E8%A3%85rabbitmq/</link>
+      <pubDate>Wed, 10 Jun 2020 00:16:55 +0200</pubDate>
+      
+      <guid>https://hrbhot.github.io/posts/docker%E5%AE%89%E8%A3%85rabbitmq/</guid>
+      <description>docker 一键启动
+docker run -d &amp;ndash;restart always &amp;ndash;name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
+端口 5672 为RabbitMQ服务器监听的 TCP 端口
+127.0.0.1:15672 为RabbitMQ管理工具监听的http端口 ，通过这个地址访问管理rabbitMQ 默认用户名 guest 密码 guest</description>
+    </item>
     
     <item>
       <title>命令行下载b站视频</title>
@@ -71,7 +83,8 @@ tar -cf - “要压缩的文件或者目录路径”| pv -s $(($(du -sk “要�
  新建用户,修改密码
 useradd ftpuser passwd ftpuser  设置 ssh ，注意 /data/ftp的上级目录的权限是管理员。 如果设置 ChrootDirectory %h 则为用户主目录
 cd /etc/ssh cp sshd_config{,.bak} vim sshd_config #编辑 #Subsystem sftp /usr/lib/openssh/sftp-server Subsystem sftp internal-sftp Match User ftpuser ChrootDirectory /data/ftp X11Forwarding no AllowTcpForwarding no ForceCommand internal-sftp  重启 测试
-service sshd restart   </description>
+service sshd restart   补充  如果多用户 可以设置用户组 Group 如下
+useradd -g sftp -d /data/ftp1 -s /sbin/nologin ftp1 #添加新用户组”sftp“和用户&amp;quot;ftp1&amp;quot; Match User user1 ChrootDirectory /data/ftp X11Forwarding no AllowTcpForwarding no ForceCommand internal-sftp Match Group sftp ChrootDirectory /data/ftp1 X11Forwarding no AllowTcpForwarding no ForceCommand internal-sftp  sftp访问的目录权限上至一直到顶级根目录 ，权限最大为755不可为777 否则出现错误 ”Connection reset by peer“</description>
     </item>
     
     <item>
@@ -118,22 +131,6 @@ elastic 监控 apache 日志  elastic stack # 开源日志平台 由elasticsearc
 Config Controllers Models Routes go.mod go.sum main.go pkg  排除pkg目录
 tree -I &amp;quot;./pkg&amp;quot;  得到排除的tree结果
 . ├── Config │ └── Database.go ├── Controllers │ └── Todo.go ├── Models │ ├── Model.go │ └── Todos.go ├── Routes │ └── Routes.go ├── go.mod ├── go.sum └── main.go  </description>
-    </item>
-    
-    <item>
-      <title>Ufw简单用法</title>
-      <link>https://hrbhot.github.io/posts/ufw%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95/</link>
-      <pubDate>Sat, 11 Apr 2020 20:00:22 +0200</pubDate>
-      
-      <guid>https://hrbhot.github.io/posts/ufw%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95/</guid>
-      <description> ufw 简单用法 展示当前策略
-ufw status  禁止9090端口
-ufw deny 9090  允许9090端口
-ufw allow 9090  删除某个规则 首先查看 规则序号
-ufw status numbered  删除
-ufw delete 序号  只允许指定IP地址访问指定端口
-例如9090端口只允许10.0.2.1访问 来规避prometheus的数据被外部发现
-ufw allow from 10.0.2.1 to any port 9090  </description>
     </item>
     
   </channel>
