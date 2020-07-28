@@ -48,38 +48,47 @@
     </item>
     
     <item>
-      <title>ssh,linux</title>
-      <link>https://hrbhot.github.io/tags/sshlinux/</link>
+      <title>ssh</title>
+      <link>https://hrbhot.github.io/tags/ssh/</link>
       <pubDate>Wed, 13 May 2020 14:52:30 +0200</pubDate>
       
-      <guid>https://hrbhot.github.io/tags/sshlinux/</guid>
+      <guid>https://hrbhot.github.io/tags/ssh/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>btc,tradingview</title>
-      <link>https://hrbhot.github.io/tags/btctradingview/</link>
+      <title>btc</title>
+      <link>https://hrbhot.github.io/tags/btc/</link>
       <pubDate>Thu, 30 Apr 2020 11:33:25 +0200</pubDate>
       
-      <guid>https://hrbhot.github.io/tags/btctradingview/</guid>
+      <guid>https://hrbhot.github.io/tags/btc/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>linux,tar</title>
-      <link>https://hrbhot.github.io/tags/linuxtar/</link>
+      <title>tradingview</title>
+      <link>https://hrbhot.github.io/tags/tradingview/</link>
+      <pubDate>Thu, 30 Apr 2020 11:33:25 +0200</pubDate>
+      
+      <guid>https://hrbhot.github.io/tags/tradingview/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tar</title>
+      <link>https://hrbhot.github.io/tags/tar/</link>
       <pubDate>Tue, 28 Apr 2020 12:59:34 +0200</pubDate>
       
-      <guid>https://hrbhot.github.io/tags/linuxtar/</guid>
+      <guid>https://hrbhot.github.io/tags/tar/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>linux,ssh,sftp</title>
-      <link>https://hrbhot.github.io/tags/linuxsshsftp/</link>
+      <title>sftp</title>
+      <link>https://hrbhot.github.io/tags/sftp/</link>
       <pubDate>Fri, 24 Apr 2020 21:45:13 +0200</pubDate>
       
-      <guid>https://hrbhot.github.io/tags/linuxsshsftp/</guid>
+      <guid>https://hrbhot.github.io/tags/sftp/</guid>
       <description></description>
     </item>
     

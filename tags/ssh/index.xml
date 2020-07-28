@@ -1,33 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>linux on Mémo de Yin </title>
-    <link>https://hrbhot.github.io/tags/linux/</link>
-    <description>Recent content in linux on Mémo de Yin </description>
+    <title>ssh on Mémo de Yin </title>
+    <link>https://hrbhot.github.io/tags/ssh/</link>
+    <description>Recent content in ssh on Mémo de Yin </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hans</language>
-    <lastBuildDate>Sun, 07 Jun 2020 12:28:23 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 13 May 2020 14:52:30 +0200</lastBuildDate>
     
-	<atom:link href="https://hrbhot.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hrbhot.github.io/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>命令行下载b站视频</title>
-      <link>https://hrbhot.github.io/posts/%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%8B%E8%BD%BDb%E7%AB%99%E8%A7%86%E9%A2%91/</link>
-      <pubDate>Sun, 07 Jun 2020 12:28:23 +0200</pubDate>
-      
-      <guid>https://hrbhot.github.io/posts/%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%8B%E8%BD%BDb%E7%AB%99%E8%A7%86%E9%A2%91/</guid>
-      <description>看b站有时候很卡，使用annie这个工具把视频下载到本地观看，和youtuble-dl差不多。
- 下载安装包
-wget https://github.com/iawia002/annie/releases/download/0.10.1/annie_0.10.1_Linux_64-bit.tar.gz  或者curl命令 下载
-curl -LO https://github.com/iawia002/annie/releases/download/0.10.1/annie_0.10.1_Linux_64-bit.tar.gz  解压缩,并删除安装文件
-tar zxvf *.gz rm *.gz  运行 下载高清的视频 可以先用 annie -i b站链接地址 ，查看支撑的清晰度，80 是1080P
-  ./annie -f 80 b站链接地址
-如果下载很多视频 可以把视频放在一个link.txt文件中。使用下面命令下载
-./annie -f 80 -F link.txt
- 如果多视频下载做个简单的后台运行脚本 down_b_video.sh
-nohup ./annie -f 80 -F link.txt &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 &amp;amp;   </description>
-    </item>
     
     <item>
       <title>ITerm2脚本登陆ssh</title>
@@ -38,17 +20,6 @@ nohup ./annie -f 80 -F link.txt &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 &amp;amp; 
       <description>ITerm2 设置脚本 免输入登陆SSH
 Profiles =&amp;gt; Open profiles =&amp;gt; Edit profiles =&amp;gt; Tags + =&amp;gt; Command位置 =&amp;gt; expect Path/脚本文件名
 带证书 SSH脚本 #!/usr/bin/expect -f set user root #用户名 set host YouHostIP #主机IP set empath YouPATH/host.pem #证书存放位置 set timeout -1 spawn ssh -i $empath $user@$host interact expect eof  免密码 SSH脚本 #!/usr/bin/expect -f set user root #用户名 set host YouHostIP #主机IP set password YouPassword #密码 set timeout -1 spawn ssh $user@$host expect { &amp;quot;(yes/no)?</description>
-    </item>
-    
-    <item>
-      <title>给tar压缩增加进度条</title>
-      <link>https://hrbhot.github.io/posts/%E7%BB%99tar%E5%8E%8B%E7%BC%A9%E5%A2%9E%E5%8A%A0%E8%BF%9B%E5%BA%A6%E6%9D%A1/</link>
-      <pubDate>Tue, 28 Apr 2020 12:59:34 +0200</pubDate>
-      
-      <guid>https://hrbhot.github.io/posts/%E7%BB%99tar%E5%8E%8B%E7%BC%A9%E5%A2%9E%E5%8A%A0%E8%BF%9B%E5%BA%A6%E6%9D%A1/</guid>
-      <description> 有点花里胡哨，在生产环境中还是建议使用 tar zcvf 这样简单的参数少的命令减少错误产生。
-用pv 和du 显示进度条 需要先安装 pv工具，如ubuntu apt install pv 利用du先获得文件或目录大小，然后输出给 pv显示。
-tar -cf - “要压缩的文件或者目录路径”| pv -s $(($(du -sk “要压缩的文件或者目录路径” | awk &#39;{print $1}&#39;) * 1024)) | gzip &amp;gt; {输出的文件名}.tar.gz  </description>
     </item>
     
     <item>
