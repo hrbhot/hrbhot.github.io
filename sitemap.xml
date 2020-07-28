@@ -3,27 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://hrbhot.github.io/</loc>
+    <lastmod>2020-07-29T01:08:29+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hrbhot.github.io/tags/odoopython/</loc>
+    <lastmod>2020-07-29T01:08:29+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hrbhot.github.io/posts/odoo_to-do_list%E5%B0%8F%E8%AE%B0/</loc>
+    <lastmod>2020-07-29T01:08:29+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hrbhot.github.io/posts/</loc>
+    <lastmod>2020-07-29T01:08:29+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hrbhot.github.io/tags/</loc>
+    <lastmod>2020-07-29T01:08:29+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://hrbhot.github.io/tags/docker/</loc>
     <lastmod>2020-06-10T00:16:55+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://hrbhot.github.io/posts/docker%E5%AE%89%E8%A3%85rabbitmq/</loc>
-    <lastmod>2020-06-10T00:16:55+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hrbhot.github.io/</loc>
-    <lastmod>2020-06-10T00:16:55+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hrbhot.github.io/posts/</loc>
-    <lastmod>2020-06-10T00:16:55+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hrbhot.github.io/tags/</loc>
     <lastmod>2020-06-10T00:16:55+02:00</lastmod>
   </url>
   

@@ -5,8 +5,137 @@
 		<description>Recent content in Posts on Mémo de Yin </description>
 		<generator>Hugo -- gohugo.io</generator>
 		<language>zh-hans</language>
-		<lastBuildDate>Wed, 10 Jun 2020 00:16:55 +0200</lastBuildDate>
+		<lastBuildDate>Wed, 29 Jul 2020 01:08:29 +0200</lastBuildDate>
 		<atom:link href="https://hrbhot.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Odoo_to Do_list小记</title>
+			<link>https://hrbhot.github.io/posts/odoo_to-do_list%E5%B0%8F%E8%AE%B0/</link>
+			<pubDate>Wed, 29 Jul 2020 01:08:29 +0200</pubDate>
+			
+			<guid>https://hrbhot.github.io/posts/odoo_to-do_list%E5%B0%8F%E8%AE%B0/</guid>
+			<description>odoo to-do list 小记
+应用逻辑 - 数据层 model / postgreSQL database ORM - 逻辑层 controle / logic 实现CRUD - 展示层 view - 安全组 Users / Manager  Todo-list  数据层 model Settings -&amp;gt; Technical -&amp;gt; Database structure -&amp;gt; Models -&amp;gt; res.partner add a line: Field Name: x_is_work_team Field Label: Is Work Team? Filed Type: boolean
+ 视图 res.partner -&amp;gt; views , windows action 可以指定要用的base视图 views type: Form Tree(list) Search Kanban</description>
+			<content type="html"><![CDATA[
+
+<p>odoo to-do list 小记</p>
+
+<h3 id="应用逻辑">应用逻辑</h3>
+
+<pre><code>- 数据层 model / postgreSQL database ORM
+- 逻辑层 controle / logic  实现CRUD
+- 展示层 view
+- 安全组 Users / Manager
+</code></pre>
+
+<h3 id="todo-list">Todo-list</h3>
+
+<ol>
+<li><p>数据层 model Settings -&gt; Technical -&gt; Database structure -&gt; Models  -&gt; res.partner
+add a line:
+    Field Name: x_is_work_team
+    Field Label: Is Work Team?
+    Filed Type: boolean</p></li>
+
+<li><p>视图 res.partner -&gt; views , windows action 可以指定要用的base视图
+views type:
+    Form
+    Tree(list)
+    Search
+    Kanban</p>
+
+<p>Contacts -&gt; 任意名片 -&gt; edit view:form ， 通过external ID 查看模块所有者 base.view_partner_form
+    Inherited views 继承视图
+    add a line:
+        View Name: Contacts - Custom &ldquo;Is Work Team&rdquo; flag
+        Architecture:
+            <field name="category_id" position="after">
+              <field name="x_is_work_team" />
+            </field></p></li>
+
+<li><p>数据模型 Settings -&gt; Technical -&gt; Database Structure -&gt; Models -&gt; Create
+Model Description: To-do Item
+Model: x_todo_item
+Save -&gt; Edit
+add a line:
+    Field Name: x_is_done
+    Field Label: Is Done?
+    Filed Type: boolean
+add a line:
+    Field Name: x_work_team_ids
+    Field Label: Work team
+    Field Type: many2many
+    Object Relation: res.partner
+    Domain: [(&lsquo;x_is_work_team&rsquo;,&lsquo;=&rsquo;,True)]</p></li>
+
+<li><p>用户组 Settings -&gt; Users &amp; Companies -&gt; Groups -&gt; Create
+Application: 空
+Name: To-do User
+Inherited
+add a line:
+     User types -&gt; Internal User
+Access Rights  / Settings -&gt; Technical -&gt; Security -&gt; Access Rights
+add a line:
+    Name: To-do Item User Access
+    Object: 选择 To-do Item
+    勾选 read acess, write access, create access, delete access</p></li>
+
+<li><p>访问控制 Settings -&gt; Technical -&gt; Security -&gt; Record Rules - Create 设置用户只能访问自己的内容
+Name: To-do Own Items
+Object: To-do Item
+Access Rights: 全选
+Rule Definition: 域过滤器 [(&lsquo;create_uid&rsquo;,&lsquo;=&rsquo;,user.id)]
+Groups: To-do User</p></li>
+
+<li><p>目录视图 Settings -&gt; Technical -&gt; User Interface -&gt; Menu Items -&gt; Create
+Menu: To-do
+Parent Menu : 空
+Action: ir.actions.act_windows ,下拉中点 create and edit
+    Action name: To-do Items
+    External ID Object: x_todo_item
+    Save</p></li>
+
+<li><p>页面视图 Settings -&gt; Technical -&gt; User Interface -&gt; Views -&gt; Create<br />
+View Name: To-do List View
+View Type: Tree
+Model: x_todo_item
+Architecture:
+    <tree>
+        <field name="x_name" />
+        <field name="x_is_done" />
+    </tree>
+Save -&gt; Create
+View Name: To-do Form View
+View Type: Form
+Model:x_todo_item
+Architecture:
+    <form>
+      <group>
+        <field name="x_name" />
+        <field name="x_is_done" />
+        <field name="x_work_team_ids" 
+              widget="many2many_tags"
+              context="{'default_x_is_work_team': True}" />
+      </group>
+    </form></p></li>
+
+<li><p>搜索视图 Settings -&gt; Technical -&gt; User Interface -&gt; Views -&gt; Create
+View Name :To-do Items Filter
+View Type: Search
+Model: x_todo_item
+Architecture:
+<search>
+    <filter name="item_not_done"
+    string="Not Done"
+    domain="[('x_is_done','=',False)]" />
+</search></p></li>
+
+<li><p>搜索视图默认选项 To-do menu -&gt; Edit Action -&gt; Filter:
+    {&lsquo;search_default_item_not_done&rsquo;:True}</p></li>
+</ol>
+]]></content>
+		</item>
 		
 		<item>
 			<title>Docker安装RabbitMQ</title>

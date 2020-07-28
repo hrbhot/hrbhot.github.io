@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>odoo,python on Mémo de Yin </title>
+    <link>https://hrbhot.github.io/tags/odoopython/</link>
+    <description>Recent content in odoo,python on Mémo de Yin </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hans</language>
+    <lastBuildDate>Wed, 29 Jul 2020 01:08:29 +0200</lastBuildDate>
+    
+	<atom:link href="https://hrbhot.github.io/tags/odoopython/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Odoo_to Do_list小记</title>
+      <link>https://hrbhot.github.io/posts/odoo_to-do_list%E5%B0%8F%E8%AE%B0/</link>
+      <pubDate>Wed, 29 Jul 2020 01:08:29 +0200</pubDate>
+      
+      <guid>https://hrbhot.github.io/posts/odoo_to-do_list%E5%B0%8F%E8%AE%B0/</guid>
+      <description>odoo to-do list 小记
+应用逻辑 - 数据层 model / postgreSQL database ORM - 逻辑层 controle / logic 实现CRUD - 展示层 view - 安全组 Users / Manager  Todo-list  数据层 model Settings -&amp;gt; Technical -&amp;gt; Database structure -&amp;gt; Models -&amp;gt; res.partner add a line: Field Name: x_is_work_team Field Label: Is Work Team? Filed Type: boolean
+ 视图 res.partner -&amp;gt; views , windows action 可以指定要用的base视图 views type: Form Tree(list) Search Kanban</description>
+    </item>
+    
+  </channel>
+</rss>

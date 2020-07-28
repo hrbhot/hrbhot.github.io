@@ -6,10 +6,21 @@
     <description>Recent content on Mémo de Yin </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hans</language>
-    <lastBuildDate>Wed, 10 Jun 2020 00:16:55 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jul 2020 01:08:29 +0200</lastBuildDate>
     
 	<atom:link href="https://hrbhot.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Odoo_to Do_list小记</title>
+      <link>https://hrbhot.github.io/posts/odoo_to-do_list%E5%B0%8F%E8%AE%B0/</link>
+      <pubDate>Wed, 29 Jul 2020 01:08:29 +0200</pubDate>
+      
+      <guid>https://hrbhot.github.io/posts/odoo_to-do_list%E5%B0%8F%E8%AE%B0/</guid>
+      <description>odoo to-do list 小记
+应用逻辑 - 数据层 model / postgreSQL database ORM - 逻辑层 controle / logic 实现CRUD - 展示层 view - 安全组 Users / Manager  Todo-list  数据层 model Settings -&amp;gt; Technical -&amp;gt; Database structure -&amp;gt; Models -&amp;gt; res.partner add a line: Field Name: x_is_work_team Field Label: Is Work Team? Filed Type: boolean
+ 视图 res.partner -&amp;gt; views , windows action 可以指定要用的base视图 views type: Form Tree(list) Search Kanban</description>
+    </item>
     
     <item>
       <title>Docker安装RabbitMQ</title>
@@ -119,18 +130,6 @@ elastic 监控 apache 日志  elastic stack # 开源日志平台 由elasticsearc
  在/etc/apache2/ssl/a1 目录下放置 a1网站的ssl证书文件
   a1.conf的内容如下
 &amp;lt;VirtualHost *:80&amp;gt; ServerName a1.com # a1的域名 ServerAlias www.a1.com ServerAdmin admin@gmail.com #管理员邮箱 DocumentRoot /data/web # 网站存放路径 &amp;lt;Directory /data/web&amp;gt; # 网站存放路径 DirectoryIndex index.php Options FollowSymLinks AllowOverride All Require all granted &amp;lt;/Directory&amp;gt; ErrorLog ${APACHE_LOG_DIR}/a1-error.log #错误日志路径 CustomLog ${APACHE_LOG_DIR}/a1-access.log combined #访问日志路径 # ssl配置部分 &amp;lt;/VirtualHost&amp;gt; &amp;lt;IfModule mod_ssl.c&amp;gt; &amp;lt;VirtualHost *:443&amp;gt; ServerAdmin admin@gmail.com ServerName a1.com ServerAlias www.a1.com DocumentRoot /data/web	#网站存放路径 &amp;lt;Directory /data/web/&amp;gt; #网站存放路径 DirectoryIndex index.</description>
-    </item>
-    
-    <item>
-      <title>使用tree命令排除某目录的方法 </title>
-      <link>https://hrbhot.github.io/posts/tree%E6%8E%92%E9%99%A4%E6%9F%90%E7%9B%AE%E5%BD%95/</link>
-      <pubDate>Sun, 12 Apr 2020 09:34:06 +0200</pubDate>
-      
-      <guid>https://hrbhot.github.io/posts/tree%E6%8E%92%E9%99%A4%E6%9F%90%E7%9B%AE%E5%BD%95/</guid>
-      <description>当前路径有如下目录文件
-Config Controllers Models Routes go.mod go.sum main.go pkg  排除pkg目录
-tree -I &amp;quot;./pkg&amp;quot;  得到排除的tree结果
-. ├── Config │ └── Database.go ├── Controllers │ └── Todo.go ├── Models │ ├── Model.go │ └── Todos.go ├── Routes │ └── Routes.go ├── go.mod ├── go.sum └── main.go  </description>
     </item>
     
   </channel>
