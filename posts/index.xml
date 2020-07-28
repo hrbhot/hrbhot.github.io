@@ -50,9 +50,11 @@ views type:
     add a line:
         View Name: Contacts - Custom &ldquo;Is Work Team&rdquo; flag
         Architecture:
-            <field name="category_id" position="after">
-              <field name="x_is_work_team" />
-            </field></p></li>
+        <code>
+            &lt;field name=&quot;category_id&quot; position=&quot;after&quot;&gt;
+              &lt;field name=&quot;x_is_work_team&quot; /&gt;
+            &lt;/field&gt;
+</code></p></li>
 
 <li><p>数据模型 Settings -&gt; Technical -&gt; Database Structure -&gt; Models -&gt; Create
 Model Description: To-do Item
@@ -100,39 +102,48 @@ Action: ir.actions.act_windows ,下拉中点 create and edit
 View Name: To-do List View
 View Type: Tree
 Model: x_todo_item
-Architecture:
-    <tree>
-        <field name="x_name" />
-        <field name="x_is_done" />
-    </tree>
-Save -&gt; Create
+Architecture:</p>
+
+<pre><code>    &lt;tree&gt;
+        &lt;field name=&quot;x_name&quot; /&gt;
+        &lt;field name=&quot;x_is_done&quot; /&gt;
+    &lt;/tree&gt;
+</code></pre>
+
+<p>Save -&gt; Create
 View Name: To-do Form View
 View Type: Form
 Model:x_todo_item
-Architecture:
-    <form>
-      <group>
-        <field name="x_name" />
-        <field name="x_is_done" />
-        <field name="x_work_team_ids" 
-              widget="many2many_tags"
-              context="{'default_x_is_work_team': True}" />
-      </group>
-    </form></p></li>
+Architecture:</p>
+
+<pre><code>    &lt;form&gt;
+      &lt;group&gt;
+        &lt;field name=&quot;x_name&quot; /&gt;
+        &lt;field name=&quot;x_is_done&quot; /&gt;
+        &lt;field name=&quot;x_work_team_ids&quot; 
+              widget=&quot;many2many_tags&quot;
+              context=&quot;{'default_x_is_work_team': True}&quot; /&gt;
+      &lt;/group&gt;
+    &lt;/form&gt;
+</code></pre></li>
 
 <li><p>搜索视图 Settings -&gt; Technical -&gt; User Interface -&gt; Views -&gt; Create
 View Name :To-do Items Filter
 View Type: Search
 Model: x_todo_item
-Architecture:
-<search>
-    <filter name="item_not_done"
-    string="Not Done"
-    domain="[('x_is_done','=',False)]" />
-</search></p></li>
+Architecture:</p>
+
+<pre><code>&lt;search&gt;
+    &lt;filter name=&quot;item_not_done&quot;
+    string=&quot;Not Done&quot;
+    domain=&quot;[('x_is_done','=',False)]&quot; /&gt;
+&lt;/search&gt; 
+</code></pre></li>
 
 <li><p>搜索视图默认选项 To-do menu -&gt; Edit Action -&gt; Filter:
-    {&lsquo;search_default_item_not_done&rsquo;:True}</p></li>
+    <code>
+    {'search_default_item_not_done':True}
+</code></p></li>
 </ol>
 ]]></content>
 		</item>
