@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>brew on Mémo de Yin </title>
+    <link>https://hrbhot.github.io/tags/brew/</link>
+    <description>Recent content in brew on Mémo de Yin </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hans</language>
+    <lastBuildDate>Wed, 29 Jul 2020 17:16:39 +0200</lastBuildDate>
+    
+	<atom:link href="https://hrbhot.github.io/tags/brew/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mac_python_降级</title>
+      <link>https://hrbhot.github.io/posts/mac_python_%E9%99%8D%E7%BA%A7/</link>
+      <pubDate>Wed, 29 Jul 2020 17:16:39 +0200</pubDate>
+      
+      <guid>https://hrbhot.github.io/posts/mac_python_%E9%99%8D%E7%BA%A7/</guid>
+      <description>给homebrew升级的时候，没注意把python也升级到了3.8，需要降级到3.7。 首先 brew switch python 3.7.6_1 ,提示需要 解绑python3.8 运行 brew unlink python@3.8 再次运行 brew switch python 3.7.6_1 已经回到了3.7.6</description>
+    </item>
+    
+  </channel>
+</rss>
